@@ -13,3 +13,10 @@
 	color: #fff;
 	background-color: #545454;
 }
+
+@media (max-width: 580px) {
+	.popup__save-btn {
+		padding: 14px 0;
+		font-size: 14px;
+	}
+}

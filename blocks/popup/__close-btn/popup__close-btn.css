@@ -9,3 +9,10 @@
 	right: -40px;
 	background: url("../../../images/icons/close-form.svg") no-repeat center;
 }
+
+@media (max-width: 425px) {
+	.popup__close-btn {
+		top: -50px;
+		right: 0;
+	}
+}

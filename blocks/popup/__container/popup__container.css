@@ -10,3 +10,10 @@
 	color: #000;
 	position: relative;
 }
+
+@media (max-width: 580px) {
+	.popup__container {
+		width: 280px;
+		padding: 25px 22px;
+	}
+}
