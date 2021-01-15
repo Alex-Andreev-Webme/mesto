@@ -1,0 +1,11 @@
+.popup__close-btn {
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	border: none;
+	background-color: transparent;
+	position: absolute;
+	top: -40px;
+	right: -40px;
+	background: url("../../../images/icons/close-form.svg") no-repeat center;
+}

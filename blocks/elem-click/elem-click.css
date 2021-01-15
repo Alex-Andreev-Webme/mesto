@@ -1,0 +1,9 @@
+.elem-click:hover {
+	opacity: .6;
+	transition: .2s;
+	cursor: pointer;
+}
+
+.elem-click:focus {
+	outline: none;
+}

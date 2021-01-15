@@ -1,0 +1,16 @@
+.profile__edit-btn {
+	padding: 0;
+	box-sizing: border-box;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #fff;
+	background: url("../../../images/icons/pen-edit.svg") no-repeat center;
+}
+
+@media (max-width: 425px) {
+	.profile__edit-btn {
+		width: 18px;
+		height: 18px;
+		background-size: 8px;
+	}
+}

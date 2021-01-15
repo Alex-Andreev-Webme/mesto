@@ -1,0 +1,7 @@
+.card__action {
+	padding: 25px 15px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff;
+}

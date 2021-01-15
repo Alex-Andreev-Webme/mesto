@@ -1,0 +1,24 @@
+.add-btn {
+	padding: 0;
+	box-sizing: border-box;
+	width: 150px;
+	height: 50px;
+	border: 2px solid #fff;
+	margin-left: auto;
+	background: url("../../images/icons/cross-add.svg") no-repeat center;
+}
+
+@media (max-width: 768px) {
+	.add-btn {
+		width: 100%;
+		margin-top: 35px;
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 425px) {
+	.add-btn {
+		max-width: 280px;
+		background-size: 16px;
+	}
+}

@@ -1,0 +1,18 @@
+.cards {
+	display: grid;
+	grid-template-columns: repeat(3, 280px);
+	gap: 18px 20px;
+	justify-content: center;
+}
+
+@media (max-width: 920px) {
+	.cards {
+		grid-template-columns: repeat(auto-fill, minmax(280px, auto));
+	}
+}
+
+@media (max-width: 425px) {
+	.cards {
+		grid-template-columns: 280px;
+	}
+}
