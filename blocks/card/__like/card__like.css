@@ -1,5 +1,8 @@
-.card__like {}
-
-.card__like:active {
-	background-color: #000;
+.card__like {
+	box-sizing: border-box;
+	padding: 0;
+	width: 22px;
+	height: 20px;
+	border: none;
+	background: url("../../../images/icons/like.svg") no-repeat center;
 }

@@ -9,13 +9,14 @@
 </head>
 
 <body class="page">
-	<div class="popup popup_opened">
-		<form class="popup__container">
-			<button type="button" class="popup__close-btn elem-click"></button>
-			<h2 class="popup__title">Редактировать профиль</h2>
-			<input type="text" class="popup__input">
-			<input type="text" class="popup__input">
-			<button type="submit" class="popup__save-btn elem-click">Сохранить</button>
+	<!-- Модальное окно -->
+	<div class="modal modal_opened">
+		<form action="#" class="modal__container">
+			<button type="button" class="modal__close-btn elem-click"></button>
+			<h2 class="modal__title">Редактировать профиль</h2>
+			<input type="name" value="Жак-Ив Кусто" class="modal__input">
+			<input type="text" value="Пионер Java Script" class="modal__input">
+			<button type="submit" class="modal__save-btn elem-click">Сохранить</button>
 		</form>
 	</div>
 	<div class="page__content">
@@ -23,83 +24,74 @@
 			<img src="./images/logo.svg" alt="Логотип Mesto Russia" class="logo">
 		</header>
 		<main class="main">
+			<!-- Секция profile -->
 			<section class="profile">
 				<img src="./images/kusto-avatar.jpg" alt="Аватар" class="profile__avatar">
 				<class class="profile__info">
-					<h1 class="profile__name">Жак-Ив Кусто</h1>
-					<button type="submit" class="profile__edit-btn elem-click"></button>
-					<p class="profile__description">Пионер Java Script</p>
+					<div class="profile__two-columns">
+						<h1 class="profile__name">Жак-Ив Кусто</h1>
+						<button type="button" class="profile__edit-btn elem-click"></button>
+					</div>
+					<p class="profile__about">Пионер Java Script</p>
 				</class>
-				<button type="submit" class="add-btn elem-click"></button>
+				<button type="button" class="add-btn elem-click"></button>
 			</section>
+			<!-- Секция cards -->
 			<section class="cards">
 				<!-- Каньон Рускеала -->
 				<article class="card">
-					<a href="#" class="card__link">
-						<img src="./images/card-ruskeala.jpg" alt="Мраморный каньон Рускеала, Карелия" class="card__image">
-					</a>
+					<img src="./images/card-ruskeala.jpg" alt="Мраморный каньон Рускеала, Карелия" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Рускеала</h2>
-						<img src="./images/icons/like-card.svg" alt="Поставить лайк" class="card__like elem-click">
+						<button type="button" class="card__like elem-click">
 					</div>
 				</article>
 				<!-- Ординская пещера -->
 				<article class="card">
-					<a href="#" class="card__link">
-						<img src="./images/card-ordinskaya-peshera.jpg" alt="Ординская пещера, Пермский край"
-							class="card__image">
-					</a>
+					<img src="./images/card-ordinskaya-peshera.jpg" alt="Ординская пещера, Пермский край"
+						class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Ординская пещера</h2>
-						<img src="./images/icons/like-card.svg" alt="Поставить лайк" class="card__like elem-click">
+						<button type="button" class="card__like elem-click">
 					</div>
 				</article>
 				<!-- Вулкан Креницына -->
 				<article class="card">
-					<a href="#" class="card__link">
-						<img src="./images/card-vulkan-krenizyna.jpg" alt="Вулкан Креницына, Курильские острова"
-							class="card__image">
-					</a>
+					<img src="./images/card-vulkan-krenizyna.jpg" alt="Вулкан Креницына, Курильские острова"
+						class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Вулкан Креницына</h2>
-						<img src="./images/icons/like-card.svg" alt="Поставить лайк" class="card__like elem-click">
+						<button type="button" class="card__like elem-click">
 					</div>
 				</article>
 				<!-- Озеро Кезенойам -->
 				<article class="card">
-					<a href="#" class="card__link">
-						<img src="./images/card-kezenoyam.jpg" alt="Озеро Кезенойам, Чечня" class="card__image">
-					</a>
+					<img src="./images/card-kezenoyam.jpg" alt="Озеро Кезенойам, Чечня" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Кезенойам</h2>
-						<img src="./images/icons/like-card.svg" alt="Поставить лайк" class="card__like elem-click">
+						<button type="button" class="card__like elem-click">
 					</div>
 				</article>
 				<!-- Озеро Сасык-Сиваш -->
 				<article class="card">
-					<a href="#" class="card__link">
-						<img src="./images/card-sasyk-sivash.jpg" alt="Розовое озеро Сасык-Сиваш, Крым" class="card__image">
-					</a>
+					<img src="./images/card-sasyk-sivash.jpg" alt="Розовое озеро Сасык-Сиваш, Крым" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Сасык-Сиваш</h2>
-						<img src="./images/icons/like-card.svg" alt="Поставить лайк" class="card__like elem-click">
+						<button type="button" class="card__like elem-click">
 					</div>
 				</article>
 				<!-- Озеро Джека Лондона-->
 				<article class="card">
-					<a href="#" class="card__link">
-						<img src="./images/card-ozero_dzeka_londona.jpg" alt="Озеро Джека Лондона, Магадан"
-							class="card__image">
-					</a>
+					<img src="./images/card-ozero_dzeka_londona.jpg" alt="Озеро Джека Лондона, Магадан" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Озеро Джека Лондона</h2>
-						<img src="./images/icons/like-card.svg" alt="Поставить лайк" class="card__like elem-click">
+						<button type="button" class="card__like elem-click">
 					</div>
 				</article>
 			</section>
 		</main>
 		<footer class="footer">
-			<p class="footer__copyright">&copy; 2021. Mesto Russia by Webme</p>
+			<p class="footer__copyright">&copy; 2021 | Mesto Russia by Webme</p>
 		</footer>
 	</div>
 	<script src="./js/app.js"></script>

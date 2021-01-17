@@ -1,8 +1,9 @@
 .profile__edit-btn {
-	padding: 0;
 	box-sizing: border-box;
+	padding: 0;
 	width: 24px;
 	height: 24px;
+	margin-left: 18px;
 	border: 1px solid #fff;
 	background: url("../../../images/icons/pen-edit.svg") no-repeat center;
 }
@@ -11,6 +12,6 @@
 	.profile__edit-btn {
 		width: 18px;
 		height: 18px;
-		background-size: 8px;
+		margin-left: 10px;
 	}
 }

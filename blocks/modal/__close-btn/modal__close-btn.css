@@ -1,18 +1,19 @@
-.popup__close-btn {
-	padding: 0;
+.modal__close-btn {
+	content: "";
 	width: 40px;
 	height: 40px;
 	border: none;
-	background-color: transparent;
+	padding: 0;
 	position: absolute;
 	top: -40px;
 	right: -40px;
 	background: url("../../../images/icons/close-form.svg") no-repeat center;
 }
 
-@media (max-width: 425px) {
-	.popup__close-btn {
-		top: -50px;
+@media (max-width: 630px) {
+	.modal__close-btn {
+		height: 25px;
 		right: 0;
+		background-size: cover;
 	}
 }

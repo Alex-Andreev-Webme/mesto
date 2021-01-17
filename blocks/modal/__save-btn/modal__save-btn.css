@@ -1,0 +1,20 @@
+.modal__save-btn {
+	padding: 0;
+	height: 50px;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #fff;
+	border: none;
+	border-radius: 2px;
+	background-color: #000;
+}
+
+.modal__save-btn:focus {
+	box-shadow: 0 0 8px #000;
+}
+
+@media (max-width: 630px) {
+	.modal__save-btn {
+		font-size: 14px;
+	}
+}

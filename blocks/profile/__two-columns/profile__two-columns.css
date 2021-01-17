@@ -1,0 +1,4 @@
+.profile__two-columns {
+	display: flex;
+	align-items: baseline;
+}

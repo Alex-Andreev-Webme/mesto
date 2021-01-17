@@ -1,8 +1,0 @@
-.card__link {
-	display: flex;
-}
-
-.card__link:hover {
-	opacity: .7;
-	transition: .2s;
-}

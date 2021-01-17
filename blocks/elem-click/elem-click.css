@@ -1,6 +1,9 @@
+.elem-click {
+	transition: .2s ease-in-out;
+}
+
 .elem-click:hover {
 	opacity: .6;
-	transition: .2s;
 	cursor: pointer;
 }
 

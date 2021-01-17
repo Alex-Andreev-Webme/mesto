@@ -7,11 +7,11 @@
 
 @media (max-width: 920px) {
 	.cards {
-		grid-template-columns: repeat(auto-fill, minmax(280px, auto));
+		grid-template-columns: repeat(2, 280px);
 	}
 }
 
-@media (max-width: 425px) {
+@media (max-width: 630px) {
 	.cards {
 		grid-template-columns: 280px;
 	}

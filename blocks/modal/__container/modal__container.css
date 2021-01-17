@@ -1,19 +1,17 @@
-.popup__container {
+.modal__container {
 	box-sizing: border-box;
+	padding: 34px 36px 36px;
 	width: 430px;
-	padding: 34px 36px;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
 	background-color: #fff;
 	border-radius: 10px;
-	color: #000;
 	position: relative;
 }
 
-@media (max-width: 580px) {
-	.popup__container {
-		width: 280px;
+@media (max-width: 630px) {
+	.modal__container {
 		padding: 25px 22px;
+		max-width: 280px;
 	}
 }

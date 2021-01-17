@@ -4,10 +4,14 @@
 	align-items: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
 	.profile {
-		padding: 70px 0 35px;
 		flex-direction: column;
-		align-content: center;
+	}
+}
+
+@media (max-width: 425px) {
+	.profile {
+		padding: 30px 0;
 	}
 }
