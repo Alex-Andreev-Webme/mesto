@@ -3,15 +3,3 @@
 	max-width: 880px;
 	margin: 0 auto;
 }
-
-@media (max-width: 920px) {
-	.page__content {
-		padding: 0 25px;
-	}
-}
-
-@media (max-width: 425px) {
-	.page__content {
-		padding: 0 20px;
-	}
-}

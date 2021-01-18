@@ -11,13 +11,15 @@
 <body class="page">
 	<!-- Модальное окно -->
 	<div class="modal">
-		<form class="modal__container">
+		<div class="modal__container">
 			<button type="button" class="modal__close-btn elem-click"></button>
 			<h2 class="modal__title">Редактировать профиль</h2>
-			<input type="text" value="Жак-Ив Кусто" id="userName" class="modal__input">
-			<input type="text" value="Пионер Java Script" id="userAbout" class="modal__input">
-			<button type="submit" class="modal__save-btn elem-click">Сохранить</button>
-		</form>
+			<form name="profile-edit" class="modal__form">
+				<input type="text" class="modal__input modal__input_type_username">
+				<input type="text" class="modal__input modal__input_type_about">
+				<button type="submit" class="modal__save-btn elem-click">Сохранить</button>
+			</form>
+		</div>
 	</div>
 	<div class="page__content">
 		<header class="header">
@@ -34,7 +36,7 @@
 					</div>
 					<p class="profile__about">Пионер Java Script</p>
 				</div>
-				<button type="button" class="add-btn elem-click"></button>
+				<button type="button" class="profile__add-btn elem-click"></button>
 			</section>
 			<!-- Секция cards -->
 			<section class="cards">
@@ -91,7 +93,7 @@
 			</section>
 		</main>
 		<footer class="footer">
-			<p class="footer__copyright">&copy; 2021 | Mesto Russia by Webme</p>
+			<p class="footer__copyright">&copy; 2021 Mesto Russia by Webme</p>
 		</footer>
 	</div>
 	<script src="./js/app.js"></script>
