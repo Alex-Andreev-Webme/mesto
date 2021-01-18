@@ -1,3 +1,4 @@
+// Глобальные переменные
 let modal = document.querySelector('.modal');
 let profileName = document.querySelector('.profile__name');
 let profileAbout = document.querySelector('.profile__about');
@@ -19,8 +20,8 @@ let formElement = document.querySelector('.modal__container');
 let nameInput = document.querySelector('#userName');
 let aboutInput = document.querySelector('#userAbout');
 
-function formSubmitHandler(event) {
-	event.preventDefault();
+function formSubmitHandler(save) {
+	save.preventDefault();
 	profileName.textContent = nameInput.value;
 	profileAbout.textContent = aboutInput.value;
 	modal.classList.remove('modal_opened');
