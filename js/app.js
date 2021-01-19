@@ -28,6 +28,7 @@ function formSubmitHandler(event) {
 	closeModal();
 }
 
+// События
 userEditBtn.addEventListener('click', function () {
 	showModal();
 });
