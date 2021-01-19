@@ -3,3 +3,9 @@
 		width: 105px;
 	}
 }
+
+@media (max-width: 920px) {
+	.logo {
+		margin-left: 20px;
+	}
+}
