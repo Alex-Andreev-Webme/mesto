@@ -16,3 +16,10 @@
 		grid-template-columns: 280px;
 	}
 }
+
+@media (max-width: 425px) {
+	.cards {
+		max-width: 280px;
+		margin: 0 auto;
+	}
+}

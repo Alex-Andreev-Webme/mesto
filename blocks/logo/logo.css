@@ -1,11 +1,11 @@
-@media (max-width: 425px) {
+@media (max-width: 920px) {
 	.logo {
-		width: 105px;
+		margin-left: 30px;
 	}
 }
 
-@media (max-width: 920px) {
+@media (max-width: 425px) {
 	.logo {
-		margin-left: 20px;
+		width: 105px;
 	}
 }
