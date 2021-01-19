@@ -1,8 +1,8 @@
 .cards {
 	display: grid;
 	grid-template-columns: repeat(3, 280px);
-	gap: 18px 20px;
 	justify-content: center;
+	gap: 18px 20px;
 }
 
 @media (max-width: 920px) {

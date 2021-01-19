@@ -1,9 +1,8 @@
 .modal__close-btn {
-	content: "";
-	width: 40px;
-	height: 40px;
-	border: none;
 	padding: 0;
+	min-width: 40px;
+	min-height: 40px;
+	border: none;
 	position: absolute;
 	top: -40px;
 	right: -40px;
@@ -12,7 +11,7 @@
 
 @media (max-width: 630px) {
 	.modal__close-btn {
-		height: 25px;
+		min-height: 25px;
 		right: 0;
 		background-size: cover;
 	}
