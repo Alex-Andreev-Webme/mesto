@@ -4,15 +4,15 @@ let profileName = document.querySelector('.profile__name');
 let profileAbout = document.querySelector('.profile__about');
 let userEditBtn = document.querySelector('.profile__edit-btn');
 let formCloseBtn = document.querySelector('.modal__close-btn');
-let formElement = document.querySelector('.modal__container');
+let formElement = document.querySelector('.modal__form');
 let nameInput = document.querySelector('.modal__input_type_username');
 let aboutInput = document.querySelector('.modal__input_type_about');
 
 // Показать модальное окно
 function showModal() {
 	modal.classList.add('modal_opened');
-	nameInput.setAttribute('value', profileName.textContent);
-	aboutInput.setAttribute('value', profileAbout.textContent);
+	nameInput.value = profileName.textContent;
+	aboutInput.value = profileAbout.textContent;
 }
 
 // Закрыть модальное окно
