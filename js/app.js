@@ -1,4 +1,3 @@
-// Глобальные переменные
 let modal = document.querySelector('.modal');
 let modalCloseBtn = document.querySelector('.modal__close-btn');
 let formElement = document.querySelector('.modal__form');
