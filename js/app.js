@@ -1,12 +1,12 @@
 // Глобальные переменные
 let modal = document.querySelector('.modal');
-let profileName = document.querySelector('.profile__name');
-let profileAbout = document.querySelector('.profile__about');
-let userEditBtn = document.querySelector('.profile__edit-btn');
-let formCloseBtn = document.querySelector('.modal__close-btn');
+let modalCloseBtn = document.querySelector('.modal__close-btn');
 let formElement = document.querySelector('.modal__form');
 let nameInput = document.querySelector('.modal__input_type_username');
 let aboutInput = document.querySelector('.modal__input_type_about');
+let profileName = document.querySelector('.profile__name');
+let profileAbout = document.querySelector('.profile__about');
+let userEditBtn = document.querySelector('.profile__edit-btn');
 
 // Показать модальное окно
 function showModal() {
@@ -33,7 +33,7 @@ userEditBtn.addEventListener('click', function () {
 	showModal();
 });
 
-formCloseBtn.addEventListener('click', function () {
+modalCloseBtn.addEventListener('click', function () {
 	closeModal();
 });
 
