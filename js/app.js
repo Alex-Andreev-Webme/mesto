@@ -27,13 +27,15 @@ function formSubmitHandler(event) {
 	closeModal();
 }
 
-// События
+// Показать модальное окно при клике на соответствующую кнопку
 userEditBtn.addEventListener('click', function () {
 	showModal();
 });
 
+// Скрыть модальное окно при клике на соответствующую кнопку
 modalCloseBtn.addEventListener('click', function () {
 	closeModal();
 });
 
+// Сохранить результат клике на соответствующую кнопку
 formElement.addEventListener('submit', formSubmitHandler);
