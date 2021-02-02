@@ -1,11 +1,11 @@
-let modal = document.querySelector('.modal');
-let modalCloseBtn = document.querySelector('.modal__close-btn');
-let formElement = document.querySelector('.modal__form');
-let nameInput = document.querySelector('.modal__input_type_username');
-let aboutInput = document.querySelector('.modal__input_type_about');
-let profileName = document.querySelector('.profile__name');
-let profileAbout = document.querySelector('.profile__about');
-let userEditBtn = document.querySelector('.profile__edit-btn');
+const modal = document.querySelector('.modal');
+const modalCloseBtn = document.querySelector('.modal__close-btn');
+const formElement = document.querySelector('.modal__form');
+const nameInput = document.querySelector('.modal__input_type_username');
+const aboutInput = document.querySelector('.modal__input_type_about');
+const profileName = document.querySelector('.profile__name');
+const profileAbout = document.querySelector('.profile__about');
+const userEditBtn = document.querySelector('.profile__edit-btn');
 
 // Показать модальное окно
 function showModal() {
@@ -27,15 +27,15 @@ function formSubmitHandler(event) {
 	closeModal();
 }
 
-// Показать модальное окно при клике на соответствующую кнопку
+// Показать модальное окно при клике
 userEditBtn.addEventListener('click', function () {
 	showModal();
 });
 
-// Скрыть модальное окно при клике на соответствующую кнопку
+// Скрыть модальное окно при клике
 modalCloseBtn.addEventListener('click', function () {
 	closeModal();
 });
 
-// Сохранить результат клике на соответствующую кнопку
+// Редактировать профиль и сохранить результат
 formElement.addEventListener('submit', formSubmitHandler);

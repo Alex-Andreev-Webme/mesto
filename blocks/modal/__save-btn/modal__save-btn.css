@@ -10,7 +10,7 @@
 }
 
 .modal__save-btn:focus {
-	box-shadow: 0 0 10px #000;
+	opacity: .6;
 }
 
 @media (max-width: 630px) {
