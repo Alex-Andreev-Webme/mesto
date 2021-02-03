@@ -12,7 +12,6 @@ function showModal() {
 	modal.classList.add('modal_opened');
 	nameInput.value = profileName.textContent;
 	aboutInput.value = profileAbout.textContent;
-
 }
 
 // Закрыть модальное окно
@@ -20,7 +19,7 @@ function closeModal() {
 	modal.classList.remove('modal_opened');
 }
 
-// Редактировать профиль
+// Редактировать профиль и сохранить результат
 function formSubmitHandler(event) {
 	event.preventDefault();
 	profileName.textContent = nameInput.value;
