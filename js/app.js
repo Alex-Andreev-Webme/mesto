@@ -65,3 +65,29 @@ modalPhotoForm.addEventListener('submit', formSubmitHandler);
 // ----- //
 
 // Добавить карточки на страницу
+const initialCards = [
+	{
+		name: 'Рускеала',
+		link: './images/card-ruskeala.jpg'
+	},
+	{
+		name: 'Ординская пещера',
+		link: './images/card-ordinskaya-peshera.jpg'
+	},
+	{
+		name: 'Вулкан Креницына',
+		link: './images/card-vulkan-krenizyna.jpg'
+	},
+	{
+		name: 'Озеро Кезенойам',
+		link: './images/card-kezenoyam.jpg'
+	},
+	{
+		name: 'Озеро Сасык-Сиваш',
+		link: './images/card-sasyk-sivash.jpg'
+	},
+	{
+		name: 'Озеро Джека Лондона',
+		link: './images/card-ozero_dzeka_londona.jpg'
+	},
+];
