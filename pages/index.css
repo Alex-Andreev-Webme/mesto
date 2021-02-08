@@ -23,6 +23,7 @@
 @import url("../blocks/profile/__add-btn/profile__add-btn.css");
 @import url("../blocks/cards/cards.css");
 @import url("../blocks/card/card.css");
+@import url("../blocks/card/__delete/card__delete.css");
 @import url("../blocks/card/__image/card__image.css");
 @import url("../blocks/card/__action/card__action.css");
 @import url("../blocks/card/__title/card__title.css");

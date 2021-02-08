@@ -10,17 +10,17 @@ const userEditBtn = document.querySelector('.profile__edit-btn');
 nameInput.value = profileName.textContent;
 aboutInput.value = profileAbout.textContent;
 
-// Показать модальное окно
+// Показать модальное окно редактирования профиля
 function showModal() {
 	modal.classList.add('modal_opened');
 }
 
-// Закрыть модальное окно
+// Закрыть модальное окно редактирования профиля
 function closeModal() {
 	modal.classList.remove('modal_opened');
 }
 
-// Обработчик формы
+// Обработчик формы редактирования профиля
 function formSubmitHandler(event) {
 	event.preventDefault();
 	profileName.textContent = nameInput.value;
