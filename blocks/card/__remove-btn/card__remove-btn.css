@@ -1,0 +1,14 @@
+.card__remove-btn {
+	padding: 0;
+	width: 18px;
+	height: 20px;
+	background: url("../../../images/icons/img-to-trash.svg") no-repeat center;
+	border: none;
+	position: absolute;
+	top: 18px;
+	right: 15px;
+}
+
+.card__remove-btn:hover {
+	transform: scale(1.25);
+}

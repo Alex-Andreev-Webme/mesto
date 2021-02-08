@@ -1,6 +1,6 @@
 const modal = document.querySelector('.modal');
 const modalCloseBtn = document.querySelector('.modal__close-btn');
-const formElement = document.querySelector('.modal__form');
+const modalForm = document.querySelector('.modal__form');
 const nameInput = document.querySelector('.modal__input_type_username');
 const aboutInput = document.querySelector('.modal__input_type_about');
 const profileName = document.querySelector('.profile__name');
@@ -26,6 +26,7 @@ function formSubmitHandler(event) {
 	profileName.textContent = nameInput.value;
 	profileAbout.textContent = aboutInput.value;
 	closeModal();
+	closeModalPhoto();
 }
 
 // Показать модальное окно при клике
@@ -35,25 +36,32 @@ userEditBtn.addEventListener('click', showModal);
 modalCloseBtn.addEventListener('click', closeModal);
 
 // Редактировать профиль и сохранить результат при клике
-formElement.addEventListener('submit', formSubmitHandler);
+modalForm.addEventListener('submit', formSubmitHandler);
 
 
 
 // ----- ПЯТЫЙ СПРИНТ ----- //
 
 
-// Отрыть и закрыть попап при клике
-const popupImages = document.querySelector('.modal-images');
-const addImageBtn = document.querySelector('.profile__add-btn');
-const closeImagesPopupBtn = document.querySelector('.modal-images__close-btn');
+// ----- Отрыть и закрыть попап при клике //
+const modalPhoto = document.querySelector('.modal-images');
+const addPhotoBtn = document.querySelector('.profile__add-btn');
+const closeModalPhotoBtn = document.querySelector('.modal-images__close-btn');
+const modalPhotoForm = document.querySelector('.modal-images__form');
 
-function showPopupImages() {
-	popupImages.classList.add('modal-images_opened');
+function showModalPhoto() {
+	modalPhoto.classList.add('modal-images_opened');
 }
 
-function closePopupImages() {
-	popupImages.classList.remove('modal-images_opened');
+function closeModalPhoto() {
+	modalPhoto.classList.remove('modal-images_opened');
 }
 
-addImageBtn.addEventListener('click', showPopupImages);
-closeImagesPopupBtn.addEventListener('click', closePopupImages);
+addPhotoBtn.addEventListener('click', showModalPhoto);
+
+closeModalPhotoBtn.addEventListener('click', closeModalPhoto);
+
+modalPhotoForm.addEventListener('submit', formSubmitHandler);
+// ----- //
+
+// Добавить карточки на страницу
