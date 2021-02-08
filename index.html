@@ -21,6 +21,20 @@
 			</form>
 		</div>
 	</div>
+	<!-- Модальное окно редактирования фотографий -->
+	<div class="modal-images">
+		<div class="modal-images__container">
+			<button type="button" class="modal-images__close-btn elem-click"></button>
+			<h2 class="modal-images__title">Новое место</h2>
+			<form name="images-edit" class="modal-images__form">
+				<input type="text" name="place-name" placeholder="Название"
+					class="modal-images__input modal-images__input_type_place">
+				<input type="text" name="place-link" placeholder="Ссылка на картинку"
+					class="modal-images__input modal-images__input_type_link">
+				<button type="submit" class="modal-images__save-btn">Создать</button>
+			</form>
+		</div>
+	</div>
 	<div class="page__content">
 		<header class="header">
 			<img src="./images/logo.svg" alt="Логотип Mesto Russia" class="logo">
@@ -42,8 +56,6 @@
 			<section class="cards">
 				<!-- Каньон Рускеала -->
 				<article class="card">
-					<img src="./images/icons/img-to-trash.svg" alt="Удалить карточку с фотографией"
-						class="card__delete elem-click">
 					<img src="./images/card-ruskeala.jpg" alt="Мраморный каньон Рускеала, Карелия" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Рускеала</h2>
@@ -52,8 +64,6 @@
 				</article>
 				<!-- Ординская пещера -->
 				<article class="card">
-					<img src="./images/icons/img-to-trash.svg" alt="Удалить карточку с фотографией"
-						class="card__delete elem-click">
 					<img src="./images/card-ordinskaya-peshera.jpg" alt="Ординская пещера, Пермский край"
 						class="card__image">
 					<div class="card__action">
@@ -63,8 +73,6 @@
 				</article>
 				<!-- Вулкан Креницына -->
 				<article class="card">
-					<img src="./images/icons/img-to-trash.svg" alt="Удалить карточку с фотографией"
-						class="card__delete elem-click">
 					<img src="./images/card-vulkan-krenizyna.jpg" alt="Вулкан Креницына, Курильские острова"
 						class="card__image">
 					<div class="card__action">
@@ -74,8 +82,6 @@
 				</article>
 				<!-- Озеро Кезенойам -->
 				<article class="card">
-					<img src="./images/icons/img-to-trash.svg" alt="Удалить карточку с фотографией"
-						class="card__delete elem-click">
 					<img src="./images/card-kezenoyam.jpg" alt="Озеро Кезенойам, Чечня" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Кезенойам</h2>
@@ -84,8 +90,6 @@
 				</article>
 				<!-- Озеро Сасык-Сиваш -->
 				<article class="card">
-					<img src="./images/icons/img-to-trash.svg" alt="Удалить карточку с фотографией"
-						class="card__delete elem-click">
 					<img src="./images/card-sasyk-sivash.jpg" alt="Розовое озеро Сасык-Сиваш, Крым" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Сасык-Сиваш</h2>
@@ -94,8 +98,6 @@
 				</article>
 				<!-- Озеро Джека Лондона -->
 				<article class="card">
-					<img src="./images/icons/img-to-trash.svg" alt="Удалить карточку с фотографией"
-						class="card__delete elem-click">
 					<img src="./images/card-ozero_dzeka_londona.jpg" alt="Озеро Джека Лондона, Магадан" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Озеро Джека Лондона</h2>

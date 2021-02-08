@@ -36,3 +36,24 @@ modalCloseBtn.addEventListener('click', closeModal);
 
 // Редактировать профиль и сохранить результат при клике
 formElement.addEventListener('submit', formSubmitHandler);
+
+
+
+// ----- ПЯТЫЙ СПРИНТ ----- //
+
+
+// Отрыть и закрыть попап при клике
+const popupImages = document.querySelector('.modal-images');
+const addImageBtn = document.querySelector('.profile__add-btn');
+const closeImagesPopupBtn = document.querySelector('.modal-images__close-btn');
+
+function showPopupImages() {
+	popupImages.classList.add('modal-images_opened');
+}
+
+function closePopupImages() {
+	popupImages.classList.remove('modal-images_opened');
+}
+
+addImageBtn.addEventListener('click', showPopupImages);
+closeImagesPopupBtn.addEventListener('click', closePopupImages);
