@@ -3,6 +3,7 @@
 	flex-direction: column;
 	border-radius: 10px;
 	background-color: #fff;
+	color: #000;
 	overflow: hidden;
 	position: relative;
 }

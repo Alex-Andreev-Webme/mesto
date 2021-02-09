@@ -1,0 +1,27 @@
+.photo-popup__save-btn {
+	padding: 0;
+	height: 50px;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #fff;
+	outline: 0;
+	border: none;
+	border-radius: 2px;
+	background-color: #000;
+	transition: .2s ease-in-out;
+}
+
+.photo-popup__save-btn:hover {
+	opacity: .8;
+	cursor: pointer;
+}
+
+.photo-popup__save-btn:focus {
+	opacity: .8;
+}
+
+@media (max-width: 630px) {
+	.photo-popup__save-btn {
+		font-size: 14px;
+	}
+}

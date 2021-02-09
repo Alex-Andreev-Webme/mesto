@@ -1,42 +1,41 @@
-const profileModal = document.querySelector('.profile-modal');
 const profileEditBtn = document.querySelector('.profile__edit-btn');
-const profileModalCloseBtn = document.querySelector('.profile-modal__close-btn');
-const profileModalForm = document.querySelector('.profile-modal__form');
-const profileModalNameInput = document.querySelector('.profile-modal__input_type_username');
-const profileModalAboutInput = document.querySelector('.profile-modal__input_type_about');
+const profilePopup = document.querySelector('.profile-popup');
+const profilePopupCloseBtn = document.querySelector('.profile-popup__close-btn');
+const profilePopupForm = document.querySelector('.profile-popup__form');
+const profilePopupNameInput = document.querySelector('.profile-popup__input_type_name');
+const profilePopupAboutInput = document.querySelector('.profile-popup__input_type_about');
 const userName = document.querySelector('.profile__name');
 const userAbout = document.querySelector('.profile__about');
 
+profilePopupNameInput.value = userName.textContent;
+profilePopupAboutInput.value = userAbout.textContent;
 
-profileModalNameInput.value = userName.textContent;
-profileModalAboutInput.value = userAbout.textContent;
-
-// Показать модальное окно редактирования профиля
-function showProfileModal() {
-	profileModal.classList.add('profile-modal_opened');
+// Показать попап редактирования профиля
+function showProfilePopup() {
+	profilePopup.classList.add('profile-popup_opened');
 }
 
-// Закрыть модальное окно редактирования профиля
-function closeProfileModal() {
-	profileModal.classList.remove('profile-modal_opened');
+// Закрыть попап редактирования профиля
+function closeProfilePopup() {
+	profilePopup.classList.remove('profile-popup_opened');
 }
 
 // Обработчик формы редактирования профиля
-function profileFormSubmitHandler(event) {
+function profileSubmitHandler(event) {
 	event.preventDefault();
-	userName.textContent = profileModalNameInput.value;
-	userAbout.textContent = profileModalAboutInput.value;
-	closeProfileModal();
+	userName.textContent = profilePopupNameInput.value;
+	userAbout.textContent = profilePopupAboutInput.value;
+	closeProfilePopup();
 }
 
-// Показать модальное окно при клике
-profileEditBtn.addEventListener('click', showProfileModal);
+// Показать попап при клике
+profileEditBtn.addEventListener('click', showProfilePopup);
 
-// Скрыть модальное окно при клике
-profileModalCloseBtn.addEventListener('click', closeProfileModal);
+// Скрыть попап при клике
+profilePopupCloseBtn.addEventListener('click', closeProfilePopup);
 
-// Редактировать профиль и сохранить результат при клике
-profileModal.addEventListener('submit', profileFormSubmitHandler);
+// Редактировать профиль и сохранить результат
+profilePopupForm.addEventListener('submit', profileSubmitHandler);
 
 
 // ----- Пятый спринт ----- //
@@ -73,3 +72,27 @@ const initialCards = [
 		alt: 'Озеро Джека Лондона, Магадан',
 	},
 ];
+
+const AddPhotoBtn = document.querySelector('.profile__add-btn');
+const photoPopup = document.querySelector('.photo-popup');
+const photoPopupCloseBtn = document.querySelector('.photo-popup__close-btn');
+const photoPopupForm = document.querySelector('.photo-popup__form');
+
+function showPhotoPopup() {
+	photoPopup.classList.add('photo-popup_opened');
+}
+
+function closePhotoPopup() {
+	photoPopup.classList.remove('photo-popup_opened');
+}
+
+function photoSubmitHandler(event) {
+	event.preventDefault();
+	closePhotoPopup();
+}
+
+AddPhotoBtn.addEventListener('click', showPhotoPopup);
+
+photoPopupCloseBtn.addEventListener('click', closePhotoPopup);
+
+photoPopupForm.addEventListener('submit', photoSubmitHandler);
