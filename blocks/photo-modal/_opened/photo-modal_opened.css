@@ -1,0 +1,5 @@
+.photo-modal_opened {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

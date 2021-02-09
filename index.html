@@ -11,28 +11,30 @@
 
 <body class="page">
 	<!-- Модальное окно редактирования профиля -->
-	<div class="modal">
-		<div class="modal__container">
-			<button type="button" class="modal__close-btn elem-click"></button>
-			<h2 class="modal__title">Редактировать профиль</h2>
-			<form name="profile-edit" class="modal__form">
-				<input type="name" name="profile-name" placeholder="Имя" class="modal__input modal__input_type_username">
-				<input type="text" name="profile-about" placeholder="О себе" class="modal__input modal__input_type_about">
-				<button type="submit" class="modal__save-btn">Сохранить</button>
+	<div class="profile-modal">
+		<div class="profile-modal__container">
+			<button type="button" class="profile-modal__close-btn elem-click"></button>
+			<h2 class="profile-modal__title">Редактировать профиль</h2>
+			<form name="profile-edit" class="profile-modal__form">
+				<input type="name" name="profile-name" placeholder="Имя"
+					class="profile-modal__input profile-modal__input_type_username">
+				<input type="text" name="profile-about" placeholder="О себе"
+					class="profile-modal__input profile-modal__input_type_about">
+				<button type="submit" class="profile-modal__save-btn">Сохранить</button>
 			</form>
 		</div>
 	</div>
 	<!-- Модальное окно редактирования фотографий -->
-	<div class="modal-images">
-		<div class="modal-images__container">
-			<button type="button" class="modal-images__close-btn elem-click"></button>
-			<h2 class="modal-images__title">Новое место</h2>
-			<form name="images-edit" class="modal-images__form">
+	<div class="photo-modal">
+		<div class="photo-modal__container">
+			<button type="button" class="photo-modal__close-btn elem-click"></button>
+			<h2 class="photo-modal__title">Новое место</h2>
+			<form name="images-edit" class="photo-modal__form">
 				<input type="text" name="photo-name" placeholder="Название"
-					class="modal-images__input modal-images__input_type_name">
+					class="photo-modal__input photo-modal__input_type_title">
 				<input type="text" name="photo-link" placeholder="Ссылка на картинку"
-					class="modal-images__input modal-images__input_type_link">
-				<button type="submit" class="modal-images__save-btn">Создать</button>
+					class="photo-modal__input photo-modal__input_type_link">
+				<button type="submit" class="photo-modal__save-btn">Создать</button>
 			</form>
 		</div>
 	</div>
@@ -56,15 +58,15 @@
 			<!-- Секция cards -->
 			<section class="cards">
 				<!-- Каньон Рускеала -->
-				<article class="card">
+				<!-- <article class="card">
 					<img src="./images/card-ruskeala.jpg" alt="Мраморный каньон Рускеала, Карелия" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Рускеала</h2>
 						<button type="button" class="card__like-btn elem-click"></button>
 					</div>
-				</article>
+				</article> -->
 				<!-- Ординская пещера -->
-				<article class="card">
+				<!-- <article class="card">
 					<button type="button" class="card__remove-btn elem-click"></button>
 					<img src="./images/card-ordinskaya-peshera.jpg" alt="Ординская пещера, Пермский край"
 						class="card__image">
@@ -72,40 +74,40 @@
 						<h2 class="card__title">Ординская пещера</h2>
 						<button type="button" class="card__like-btn elem-click"></button>
 					</div>
-				</article>
+				</article> -->
 				<!-- Вулкан Креницына -->
-				<article class="card">
+				<!-- <article class="card">
 					<img src="./images/card-vulkan-krenizyna.jpg" alt="Вулкан Креницына, Курильские острова"
 						class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Вулкан Креницына</h2>
 						<button type="button" class="card__like-btn elem-click"></button>
 					</div>
-				</article>
+				</article> -->
 				<!-- Озеро Кезенойам -->
-				<article class="card">
+				<!-- <article class="card">
 					<img src="./images/card-kezenoyam.jpg" alt="Озеро Кезенойам, Чечня" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Кезенойам</h2>
 						<button type="button" class="card__like-btn elem-click"></button>
 					</div>
-				</article>
+				</article> -->
 				<!-- Озеро Сасык-Сиваш -->
-				<article class="card">
+				<!-- <article class="card">
 					<img src="./images/card-sasyk-sivash.jpg" alt="Розовое озеро Сасык-Сиваш, Крым" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Сасык-Сиваш</h2>
 						<button type="button" class="card__like-btn elem-click"></button>
 					</div>
-				</article>
+				</article> -->
 				<!-- Озеро Джека Лондона -->
-				<article class="card">
+				<!-- <article class="card">
 					<img src="./images/card-ozero_dzeka_londona.jpg" alt="Озеро Джека Лондона, Магадан" class="card__image">
 					<div class="card__action">
 						<h2 class="card__title">Озеро Джека Лондона</h2>
 						<button type="button" class="card__like-btn elem-click"></button>
 					</div>
-				</article>
+				</article> -->
 			</section>
 		</main>
 		<footer class="footer">
@@ -113,10 +115,9 @@
 		</footer>
 	</div>
 
-	<template class="template">
-		<button type="button" class="card__remove-btn elem-click"></button>
+	<template class="cards-template">
 		<article class="card">
-			<button class="card__remove"></button>
+			<button type="button" class="card__remove-btn elem-click"></button>
 			<img src="" alt="" class="card__image">
 			<div class="card__action">
 				<h2 class="card__title"></h2>
@@ -124,6 +125,7 @@
 			</div>
 		</article>
 	</template>
+
 </body>
 
 </html>
