@@ -1,93 +1,75 @@
-const modal = document.querySelector('.modal');
-const modalCloseBtn = document.querySelector('.modal__close-btn');
-const modalForm = document.querySelector('.modal__form');
-const nameInput = document.querySelector('.modal__input_type_username');
-const aboutInput = document.querySelector('.modal__input_type_about');
-const profileName = document.querySelector('.profile__name');
-const profileAbout = document.querySelector('.profile__about');
-const userEditBtn = document.querySelector('.profile__edit-btn');
+const profileModal = document.querySelector('.profile-modal');
+const profileEditBtn = document.querySelector('.profile__edit-btn');
+const profileModalCloseBtn = document.querySelector('.profile-modal__close-btn');
+const profileModalForm = document.querySelector('.profile-modal__form');
+const profileModalNameInput = document.querySelector('.profile-modal__input_type_username');
+const profileModalAboutInput = document.querySelector('.profile-modal__input_type_about');
+const userName = document.querySelector('.profile__name');
+const userAbout = document.querySelector('.profile__about');
 
-nameInput.value = profileName.textContent;
-aboutInput.value = profileAbout.textContent;
+
+profileModalNameInput.value = userName.textContent;
+profileModalAboutInput.value = userAbout.textContent;
 
 // Показать модальное окно редактирования профиля
-function showModal() {
-	modal.classList.add('modal_opened');
+function showProfileModal() {
+	profileModal.classList.add('profile-modal_opened');
 }
 
 // Закрыть модальное окно редактирования профиля
-function closeModal() {
-	modal.classList.remove('modal_opened');
+function closeProfileModal() {
+	profileModal.classList.remove('profile-modal_opened');
 }
 
 // Обработчик формы редактирования профиля
-function formSubmitHandler(event) {
+function profileFormSubmitHandler(event) {
 	event.preventDefault();
-	profileName.textContent = nameInput.value;
-	profileAbout.textContent = aboutInput.value;
-	closeModal();
-	closeModalPhoto();
+	userName.textContent = profileModalNameInput.value;
+	userAbout.textContent = profileModalAboutInput.value;
+	closeProfileModal();
 }
 
 // Показать модальное окно при клике
-userEditBtn.addEventListener('click', showModal);
+profileEditBtn.addEventListener('click', showProfileModal);
 
 // Скрыть модальное окно при клике
-modalCloseBtn.addEventListener('click', closeModal);
+profileModalCloseBtn.addEventListener('click', closeProfileModal);
 
 // Редактировать профиль и сохранить результат при клике
-modalForm.addEventListener('submit', formSubmitHandler);
+profileModal.addEventListener('submit', profileFormSubmitHandler);
 
 
+// ----- Пятый спринт ----- //
 
-// ----- ПЯТЫЙ СПРИНТ ----- //
-
-
-// ----- Отрыть и закрыть попап при клике //
-const modalPhoto = document.querySelector('.modal-images');
-const addPhotoBtn = document.querySelector('.profile__add-btn');
-const closeModalPhotoBtn = document.querySelector('.modal-images__close-btn');
-const modalPhotoForm = document.querySelector('.modal-images__form');
-
-function showModalPhoto() {
-	modalPhoto.classList.add('modal-images_opened');
-}
-
-function closeModalPhoto() {
-	modalPhoto.classList.remove('modal-images_opened');
-}
-
-addPhotoBtn.addEventListener('click', showModalPhoto);
-
-closeModalPhotoBtn.addEventListener('click', closeModalPhoto);
-
-modalPhotoForm.addEventListener('submit', formSubmitHandler);
-// ----- //
-
-// Добавить карточки на страницу
 const initialCards = [
 	{
-		name: 'Рускеала',
-		link: './images/card-ruskeala.jpg'
+		title: 'Рускеала',
+		src: './images/card-ruskeala.jpg',
+		alt: 'Мраморный каньон Рускеала, Карелия',
 	},
 	{
-		name: 'Ординская пещера',
-		link: './images/card-ordinskaya-peshera.jpg'
+		title: 'Ординская пещера',
+		src: './images/card-ordinskaya-peshera.jpg',
+		alt: 'Ординская пещера, Пермский край',
 	},
 	{
-		name: 'Вулкан Креницына',
-		link: './images/card-vulkan-krenizyna.jpg'
+		title: 'Вулкан Креницына',
+		src: './images/card-vulkan-krenizyna.jpg',
+		alt: 'Вулкан Креницына, Курильские острова',
 	},
 	{
-		name: 'Озеро Кезенойам',
-		link: './images/card-kezenoyam.jpg'
+		title: 'Озеро Кезенойам',
+		src: './images/card-kezenoyam.jpg',
+		alt: 'Озеро Кезенойам, Чечня',
 	},
 	{
-		name: 'Озеро Сасык-Сиваш',
-		link: './images/card-sasyk-sivash.jpg'
+		title: 'Озеро Сасык-Сиваш',
+		src: './images/card-sasyk-sivash.jpg',
+		alt: 'Розовое озеро Сасык - Сиваш, Крым',
 	},
 	{
-		name: 'Озеро Джека Лондона',
-		link: './images/card-ozero_dzeka_londona.jpg'
+		title: 'Озеро Джека Лондона',
+		src: './images/card-ozero_dzeka_londona.jpg',
+		alt: 'Озеро Джека Лондона, Магадан',
 	},
 ];
