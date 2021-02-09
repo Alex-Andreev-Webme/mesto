@@ -77,6 +77,23 @@ const AddPhotoBtn = document.querySelector('.profile__add-btn');
 const photoPopup = document.querySelector('.photo-popup');
 const photoPopupCloseBtn = document.querySelector('.photo-popup__close-btn');
 const photoPopupForm = document.querySelector('.photo-popup__form');
+const cardLikeBtn = document.querySelectorAll('.card__like-btn');
+const cardsContainer = document.querySelector('.cards');
+const cardsTemplate = document.querySelector('.cards-template').content;
+
+function renderCards(card) {
+	const cardElement = cardsTemplate.cloneNode(true);
+	console.log(cardElement);
+	cardElement.querySelector('.card__title').textContent = 'Рускеала';
+	cardElement.querySelector('.card__image').src = './images/card-ruskeala.jpg';
+	// Нужно понять, как подтянуть данные из всех 6 карточек из массива
+	// cardElement.querySelector('.card__image').src = card.src;
+	// cardElement.querySelector('.card__image').alt = card.alt;
+	// cardElement.querySelector('.card__image').textContent = card.title;
+	cardsContainer.append(cardElement);
+}
+
+renderCards();
 
 function showPhotoPopup() {
 	photoPopup.classList.add('photo-popup_opened');
