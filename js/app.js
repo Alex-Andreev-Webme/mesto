@@ -122,7 +122,7 @@ photoPopupCloseBtn.addEventListener('click', closePhotoPopup);
 
 photoPopupForm.addEventListener('submit', addCardHandler);
 
-// --- Добавить и сохранить новую карточку на страницу --- //
+// --- Добавить и сохранить новую карточку на странице --- //
 function addCardHandler(event) {
 	event.preventDefault();
 	const photoInputLink = document.querySelector('.photo-popup__input_type_link');
@@ -152,11 +152,27 @@ function removeCard(event) {
 // --- Показать/скрыть попап галереи --- //
 const galleryPopup = document.querySelector('.gallery-popup');
 
-function showGalleryPopup() {
-	const targetItem = galleryPopup.classList.add('gallery-popup_opened');
-
+function showGalleryPopup(event) {
+	const popupOpened = galleryPopup.classList.add('gallery-popup_opened');
+	const targetEl = event.target;
+	const targetItem = targetEl.closest('.card');
+	const cardTitle = targetItem.querySelector('.card__title');
+	const galleryPopupTitle = document.querySelector('.gallery-popup__title');
+	galleryPopupTitle.textContent = cardTitle.textContent;
 }
 
 function closeGalleryPopup() {
-	const targetItem = galleryPopup.classList.remove('gallery-popup_opened');
+	const popupOpened = galleryPopup.classList.remove('gallery-popup_opened');
+}
+
+// Разбор в треде
+function toggleImage(event) {
+	const targetEl = event.target;
+	const targetItem = targetEl.closest('.element');
+	const targetTitle = targetItem.querySelector('.element__place');
+	const picPopup = togglePopupImage.querySelector('.popup-image__pic');
+	const titlePopup = togglePopupImage.querySelector('.popup-image__title');
+	picPopup.src = targetEl.src;
+	titlePopup.textContent = targetTitle.textContent;
+	togglePopupImage.classList.toggle("popup-image_opened");
 }
