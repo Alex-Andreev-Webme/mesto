@@ -1,8 +1,5 @@
 .gallery-popup__container {
-	/* max-width: 75vw;
-	max-height: 75vh; */
-	min-width: 75vw;
-	min-height: 75vh;
+	max-width: 75vw;
+	max-height: 75vh;
 	position: relative;
-	background-color: #555;
 }

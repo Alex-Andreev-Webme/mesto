@@ -11,7 +11,7 @@
 
 <body class="page">
 	<!-- Попап окно редактирования профиля -->
-	<div class="profile-popup">
+	<div class="profile-popup popup popup_fade-in">
 		<div class="profile-popup__container">
 			<button type="button" class="profile-popup__close-btn elem-click"></button>
 			<h2 class="profile-popup__title">Редактировать профиль</h2>
@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	<!-- Попап редактирования фотографий -->
-	<div class="photo-popup">
+	<div class="photo-popup popup popup_fade-in">
 		<div class="photo-popup__container">
 			<button type="button" class="photo-popup__close-btn elem-click"></button>
 			<h2 class="photo-popup__title">Новое место</h2>
@@ -39,12 +39,13 @@
 		</div>
 	</div>
 	<!-- Попап галереи для фотографий -->
-	<div class="gallery-popup">
+	<figure class="gallery-popup popup popup_fade-in">
 		<div class="gallery-popup__container">
 			<button type="button" class="gallery-popup__close-btn elem-click"></button>
-			<h2 class="gallery-popup__title"></h2>
+			<img src="" alt="#" class="gallery-popup__image">
+			<figcaption class="gallery-popup__title"></figcaption>
 		</div>
-	</div>
+	</figure>
 	<div class="page__content">
 		<header class="header">
 			<img src="./images/logo.svg" alt="Логотип Mesto Russia" class="logo">

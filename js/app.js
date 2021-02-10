@@ -77,7 +77,7 @@ const cardsContainer = document.querySelector('.cards'); // родительск
 const cardsTemplate = document.querySelector('.cards-template').content; // содержание тега template
 
 // --- Шесть карточек «из коробки» --- //
-function getCards(card) {
+function getCard(card) {
 	const cardElement = cardsTemplate.cloneNode(true);
 	const cardImage = cardElement.querySelector('.card__image');
 	const cardTitle = cardElement.querySelector('.card__title');
@@ -95,8 +95,9 @@ function getCards(card) {
 	return cardElement;
 }
 
+// 
 function redrerCards() {
-	const html = initialCards.map(getCards);
+	const html = initialCards.map(getCard);
 	cardsContainer.append(...html);
 }
 
@@ -129,7 +130,7 @@ function addCardHandler(event) {
 	const photoInputTitle = document.querySelector('.photo-popup__input_type_title');
 	const inputLinkValue = photoInputLink.value;
 	const inputTitleValue = photoInputTitle.value;
-	const cardItem = getCards({ src: inputLinkValue, title: inputTitleValue });
+	const cardItem = getCard({ src: inputLinkValue, title: inputTitleValue });
 	cardsContainer.prepend(cardItem);
 	photoInputLink.value = '';
 	photoInputTitle.value = '';
@@ -158,21 +159,12 @@ function showGalleryPopup(event) {
 	const targetItem = targetEl.closest('.card');
 	const cardTitle = targetItem.querySelector('.card__title');
 	const galleryPopupTitle = document.querySelector('.gallery-popup__title');
+	const galleryPopupImage = document.querySelector('.gallery-popup__image');
+	const cardImage = targetItem.querySelector('.card__image');
 	galleryPopupTitle.textContent = cardTitle.textContent;
+	galleryPopupImage.src = cardImage.src;
 }
 
 function closeGalleryPopup() {
 	const popupOpened = galleryPopup.classList.remove('gallery-popup_opened');
-}
-
-// Разбор в треде
-function toggleImage(event) {
-	const targetEl = event.target;
-	const targetItem = targetEl.closest('.element');
-	const targetTitle = targetItem.querySelector('.element__place');
-	const picPopup = togglePopupImage.querySelector('.popup-image__pic');
-	const titlePopup = togglePopupImage.querySelector('.popup-image__title');
-	picPopup.src = targetEl.src;
-	titlePopup.textContent = targetTitle.textContent;
-	togglePopupImage.classList.toggle("popup-image_opened");
 }
