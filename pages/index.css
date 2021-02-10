@@ -17,6 +17,11 @@
 @import url("../blocks/photo-popup/__form/photo-popup__form.css");
 @import url("../blocks/photo-popup/__input/photo-popup__input.css");
 @import url("../blocks/photo-popup/__save-btn/photo-popup__save-btn.css");
+@import url("../blocks/gallery-popup/gallery-popup.css");
+@import url("../blocks/gallery-popup/_opened/gallery-popup_opened.css");
+@import url("../blocks/gallery-popup/__container/gallery-popup__container.css");
+@import url("../blocks/gallery-popup/__close-btn/gallery-popup__close-btn.css");
+@import url("../blocks/gallery-popup/__title/gallery-popup__title.css");
 @import url("../blocks/page/__content/page__content.css");
 @import url("../blocks/header/header.css");
 @import url("../blocks/logo/logo.css");

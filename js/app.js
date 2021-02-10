@@ -85,9 +85,13 @@ function getCards(card) {
 	cardImage.alt = card.alt;
 	cardTitle.textContent = card.title;
 	const removeBtn = cardElement.querySelector('.card__remove-btn');
-	const likeBtn = cardElement.querySelector('.card__like-btn');;
+	const likeBtn = cardElement.querySelector('.card__like-btn');
+	const galleryPopupOpenBtn = cardImage;
+	const galleryPopupCloseBtn = document.querySelector('.gallery-popup__close-btn');
 	removeBtn.addEventListener('click', removeCard);
 	likeBtn.addEventListener('click', likeCard);
+	galleryPopupOpenBtn.addEventListener('click', showGalleryPopup);
+	galleryPopupCloseBtn.addEventListener('click', closeGalleryPopup);
 	return cardElement;
 }
 
@@ -98,6 +102,7 @@ function redrerCards() {
 
 redrerCards();
 
+// --- Показать/скрыть попап редактирования фотографий --- //
 const AddPhotoBtn = document.querySelector('.profile__add-btn');
 const photoPopup = document.querySelector('.photo-popup');
 const photoPopupCloseBtn = document.querySelector('.photo-popup__close-btn');
@@ -111,7 +116,13 @@ function closePhotoPopup() {
 	photoPopup.classList.remove('photo-popup_opened');
 }
 
-// Добавить и сохранить новую карточку на страницу
+AddPhotoBtn.addEventListener('click', showPhotoPopup);
+
+photoPopupCloseBtn.addEventListener('click', closePhotoPopup);
+
+photoPopupForm.addEventListener('submit', addCardHandler);
+
+// --- Добавить и сохранить новую карточку на страницу --- //
 function addCardHandler(event) {
 	event.preventDefault();
 	const photoInputLink = document.querySelector('.photo-popup__input_type_link');
@@ -125,29 +136,27 @@ function addCardHandler(event) {
 	closePhotoPopup();
 }
 
-// Поставить лайк
+// --- Поставить лайк --- //
 function likeCard(event) {
 	const targetEl = event.target;
 	const targetItem = targetEl.classList.toggle('card__like-btn_active');
 }
 
-// Удалить карточку
+// --- Удалить карточку --- //
 function removeCard(event) {
 	const targetEl = event.target;
 	const targetItem = targetEl.closest('.card');
 	targetItem.remove();
 }
 
-// const likeBtn = document.querySelectorAll('.card__like-btn');
+// --- Показать/скрыть попап галереи --- //
+const galleryPopup = document.querySelector('.gallery-popup');
 
-// likeBtn.forEach(function (item) {
-// 	item.addEventListener('click', function () {
-// 		item.classList.toggle('card__like-btn_active');
-// 	});
-// });
+function showGalleryPopup() {
+	const targetItem = galleryPopup.classList.add('gallery-popup_opened');
 
-AddPhotoBtn.addEventListener('click', showPhotoPopup);
+}
 
-photoPopupCloseBtn.addEventListener('click', closePhotoPopup);
-
-photoPopupForm.addEventListener('submit', addCardHandler);
+function closeGalleryPopup() {
+	const targetItem = galleryPopup.classList.remove('gallery-popup_opened');
+}

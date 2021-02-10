@@ -1,0 +1,9 @@
+.gallery-popup__title {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.25;
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+}
