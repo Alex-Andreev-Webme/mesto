@@ -1,6 +1,11 @@
 .popup__image {
-	display: block;
-	width: 100%;
-	max-height: inherit;
+	max-width: 75vw;
+	max-height: 75vh;
 	object-fit: cover;
+}
+
+@media (max-width: 630px) {
+	.popup__image {
+		height: 50vh;
+	}
 }

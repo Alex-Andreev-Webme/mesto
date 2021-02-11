@@ -95,7 +95,7 @@ function getCard(arrItem) {
 	return cardElement;
 }
 
-// ---  Тестируем --- //
+// --- Тестируем --- //
 function addCard(card) {
 	cardsContainer.prepend(card);
 }
