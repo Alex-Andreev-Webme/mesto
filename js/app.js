@@ -137,5 +137,9 @@ function closeGalleryPopup() {
 	galleryPopup.classList.remove('popup_opened');
 }
 
+// Пишем общую функцию для открытия попапов согласно рекомендациям ревьюера
+const popup = document.querySelector('.popup');
+
+
 // --- Добавляем отрендеренные карточки на страницу --- //
 initialCards.forEach(arrItem => addCard(getCard(arrItem)));
