@@ -15,7 +15,6 @@ const photoPopupCloseBtn = document.querySelector('.popup__close-btn_place_photo
 const photoPopupForm = document.querySelector('.popup__form_place_photo');
 const cardsContainer = document.querySelector('.cards'); // родительский блок для карточек
 const cardsTemplate = document.querySelector('.cards-template').content; // содержание тега template
-
 // Пишем общую функцию для всех попапов
 const popup = document.querySelector('.popup');
 const profilePopup = document.querySelector('.popup_place_profile');
@@ -24,22 +23,12 @@ const galleryPopup = document.querySelector('.popup_place_gallery');
 
 function showPopup(popup) {
 	popup.classList.add('popup_opened');
-}
-
-function closePopup(popup) {
-	popup.classList.remove('popup_opened');
-}
-
-// Открыть попап редактирования профиля
-function showProfilePopup() {
-	showPopup(profilePopup);
 	profilePopupNameInput.value = userName.textContent;
 	profilePopupAboutInput.value = userAbout.textContent;
 }
 
-// Закрыть попап редактирования профиля
-function closeProfilePopup() {
-	closePopup(profilePopup);
+function closePopup(popup) {
+	popup.classList.remove('popup_opened');
 }
 
 // Обработчик формы редактирования профиля
@@ -48,16 +37,6 @@ function profileSubmitHandler(event) {
 	userName.textContent = profilePopupNameInput.value;
 	userAbout.textContent = profilePopupAboutInput.value;
 	closePopup(profilePopup);
-}
-
-// Открыть попап редактирования фотографий
-function showPhotoPopup() {
-	showPopup(photoPopup);
-}
-
-// Закрыть попап редактирования фотографий
-function closePhotoPopup() {
-	closePopup(photoPopup);
 }
 
 // Обработчик формы добавления новой карточки на страницу
@@ -72,7 +51,7 @@ function addCardHandler(event) {
 	closePopup(photoPopup);
 }
 
-// Открыть попап галереи
+// Попап галереи
 function showGalleryPopup(event) {
 	const targetEl = event.target;
 	const targetItem = targetEl.closest('.card');
@@ -83,20 +62,15 @@ function showGalleryPopup(event) {
 	showPopup(galleryPopup);
 }
 
-// Закрыть попап галереи
-function closeGalleryPopup() {
-	closePopup(galleryPopup);
-}
+profileEditBtn.addEventListener('click', () => showPopup(profilePopup));
 
-profileEditBtn.addEventListener('click', showProfilePopup);
+profilePopupCloseBtn.addEventListener('click', () => closePopup(profilePopup));
 
-profilePopupCloseBtn.addEventListener('click', closeProfilePopup);
+addPhotoBtn.addEventListener('click', () => showPopup(photoPopup));
 
-addPhotoBtn.addEventListener('click', showPhotoPopup);
+photoPopupCloseBtn.addEventListener('click', () => closePopup(photoPopup));
 
-photoPopupCloseBtn.addEventListener('click', closePhotoPopup);
-
-galleryPopupCloseBtn.addEventListener('click', closeGalleryPopup);
+galleryPopupCloseBtn.addEventListener('click', () => closePopup(galleryPopup));
 
 // Поставить лайк
 function likeCard(event) {
