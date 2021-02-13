@@ -23,12 +23,16 @@ const galleryPopup = document.querySelector('.popup_place_gallery');
 
 function showPopup(popup) {
 	popup.classList.add('popup_opened');
-	profilePopupNameInput.value = userName.textContent;
-	profilePopupAboutInput.value = userAbout.textContent;
 }
 
 function closePopup(popup) {
 	popup.classList.remove('popup_opened');
+}
+
+function showProfilePopup() {
+	showPopup(profilePopup);
+	profilePopupNameInput.value = userName.textContent;
+	profilePopupAboutInput.value = userAbout.textContent;
 }
 
 // Обработчик формы редактирования профиля
@@ -62,7 +66,7 @@ function showGalleryPopup(event) {
 	showPopup(galleryPopup);
 }
 
-profileEditBtn.addEventListener('click', () => showPopup(profilePopup));
+profileEditBtn.addEventListener('click', showProfilePopup);
 
 profilePopupCloseBtn.addEventListener('click', () => closePopup(profilePopup));
 
