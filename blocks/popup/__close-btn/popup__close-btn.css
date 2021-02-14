@@ -16,3 +16,7 @@
 		background-size: cover;
 	}
 }
+
+.popup__close-btn:focus {
+	animation: rotation .5s ease-in-out;
+}
