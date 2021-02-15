@@ -1,23 +1,22 @@
 const profileEditBtn = document.querySelector('.profile__edit-btn');
-const profilePopupForm = document.querySelector('.popup__form');
-const profilePopupNameInput = document.querySelector('.popup__input_type_name');
-const profilePopupAboutInput = document.querySelector('.popup__input_type_about');
 const userName = document.querySelector('.profile__name');
 const userAbout = document.querySelector('.profile__about');
-const photoInputLink = document.querySelector('.popup__input_type_link');
-const photoInputTitle = document.querySelector('.popup__input_type_title');
-const galleryPopupTitle = document.querySelector('.popup__title_place_gallery');
-const galleryPopupImage = document.querySelector('.popup__image');
 const addPhotoBtn = document.querySelector('.profile__add-btn');
-const photoPopupForm = document.querySelector('.popup__form_place_photo');
-const cardsContainer = document.querySelector('.cards'); // родительский блок для карточек
-const cardsTemplate = document.querySelector('.cards-template').content; // содержание тега template
-// Пишем общую функцию для всех попапов
 const popup = document.querySelector('.popup');
 const profilePopup = document.querySelector('.popup_place_profile');
 const photoPopup = document.querySelector('.popup_place_photo');
 const galleryPopup = document.querySelector('.popup_place_gallery');
 const popupCloseBtns = document.querySelectorAll('.popup__close-btn');
+const profilePopupForm = document.querySelector('.popup__form');
+const profilePopupNameInput = document.querySelector('.popup__input_type_name');
+const profilePopupAboutInput = document.querySelector('.popup__input_type_about');
+const photoInputLink = document.querySelector('.popup__input_type_link');
+const photoInputTitle = document.querySelector('.popup__input_type_title');
+const galleryPopupTitle = document.querySelector('.popup__title_place_gallery');
+const galleryPopupImage = document.querySelector('.popup__image');
+const photoPopupForm = document.querySelector('.popup__form_place_photo');
+const cardsContainer = document.querySelector('.cards'); // родительский блок для карточек
+const cardsTemplate = document.querySelector('.cards-template').content; // содержание тега template
 
 function closePopupClick(event) {
 	const targetPopup = event.target.closest('.popup');
