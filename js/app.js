@@ -18,15 +18,18 @@ const photoPopupForm = document.querySelector('.popup__form_place_photo');
 const cardsContainer = document.querySelector('.cards'); // родительский блок для карточек
 const cardsTemplate = document.querySelector('.cards-template').content; // содержание тега template
 
+// Общая кнопка «крестик» для попапов
 function closePopupClick(event) {
 	const targetPopup = event.target.closest('.popup');
 	closePopup(targetPopup);
 }
 
+// Открываем попап
 function showPopup(popup) {
 	popup.classList.add('popup_opened');
 }
 
+// Закрываем попап
 function closePopup(popup) {
 	popup.classList.remove('popup_opened');
 }
