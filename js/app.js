@@ -31,6 +31,7 @@ function closePopup(popup) {
 	popup.classList.remove('popup_opened');
 }
 
+// Получаем актуальыне данные профиля
 function getProfilePopup() {
 	showPopup(profilePopup);
 	profilePopupNameInput.value = userName.textContent;
@@ -68,12 +69,6 @@ function showGalleryPopup(event) {
 	showPopup(galleryPopup);
 }
 
-profileEditBtn.addEventListener('click', getProfilePopup);
-
-addPhotoBtn.addEventListener('click', () => showPopup(photoPopup));
-
-popupCloseBtns.forEach(button => button.addEventListener('click', closePopupClick));
-
 // Поставить лайк
 function likeCard(event) {
 	event.target.classList.toggle('card__like-btn_active');
@@ -84,6 +79,12 @@ function removeCard(event) {
 	const targetCard = event.target.closest('.card');
 	targetCard.remove();
 }
+
+profileEditBtn.addEventListener('click', getProfilePopup);
+
+addPhotoBtn.addEventListener('click', () => showPopup(photoPopup));
+
+popupCloseBtns.forEach(button => button.addEventListener('click', closePopupClick));
 
 photoPopupForm.addEventListener('submit', addCardHandler);
 
@@ -105,6 +106,7 @@ function getCard(arrItem) {
 	return cardElement;
 }
 
+// Вставляем карточки в соответствующий контейнер
 function addCard(card) {
 	cardsContainer.prepend(card);
 }

@@ -1,12 +1,9 @@
 .elem-click {
 	transition: .2s ease-in-out;
+	outline: none;
 }
 
 .elem-click:hover {
 	opacity: .6;
 	cursor: pointer;
-}
-
-.elem-click:focus {
-	outline: none;
 }
