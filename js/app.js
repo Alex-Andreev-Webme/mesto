@@ -27,11 +27,13 @@ function closePopupOnCross(event) {
 // Открываем попап
 function showPopup(popup) {
 	popup.classList.add('popup_opened');
+	document.addEventListener('keydown', closePopupOnEscape);
 }
 
 // Закрываем попап
 function closePopup(popup) {
 	popup.classList.remove('popup_opened');
+	document.removeEventListener('keydown', closePopupOnEscape);
 }
 
 // Получаем актуальыне данные профиля
@@ -89,16 +91,15 @@ function closePopupOnOverlay(event) {
 	closePopup(targetOverlay);
 }
 
-// Закрыть попап при нажатии на escape (деревяный вариант)
+// Закрыть попап при нажатии на escape
 function closePopupOnEscape(event) {
-	if (event.key === 'Escape') {
+	const escape = event.key === 'Escape';
+	if (escape) {
 		closePopup(profilePopup);
 		closePopup(photoPopup);
 		closePopup(galleryPopup);
 	}
 }
-
-document.addEventListener('keydown', closePopupOnEscape); // деревяный вариант
 
 profileEditBtn.addEventListener('click', getProfilePopup);
 
@@ -106,7 +107,7 @@ addPhotoBtn.addEventListener('click', () => showPopup(photoPopup));
 
 popupCloseBtns.forEach(button => button.addEventListener('click', closePopupOnCross));
 
-popups.forEach(overlayEl => overlayEl.addEventListener('click', closePopupOnOverlay));
+popups.forEach(overlayEl => overlayEl.addEventListener('mousedown', closePopupOnOverlay));
 
 photoPopupForm.addEventListener('submit', addCardHandler);
 
