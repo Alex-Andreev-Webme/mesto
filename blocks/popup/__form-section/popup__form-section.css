@@ -1,0 +1,8 @@
+.popup__form-section {
+	margin-bottom: 40px;
+	position: relative;
+}
+
+.popup__form-section:last-of-type {
+	margin-bottom: 0;
+}

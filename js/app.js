@@ -2,7 +2,6 @@ const profileEditBtn = document.querySelector('.profile__edit-btn');
 const userName = document.querySelector('.profile__name');
 const userAbout = document.querySelector('.profile__about');
 const addPhotoBtn = document.querySelector('.profile__add-btn');
-const popup = document.querySelector('.popup');
 const profilePopup = document.querySelector('.popup_place_profile');
 const photoPopup = document.querySelector('.popup_place_photo');
 const galleryPopup = document.querySelector('.popup_place_gallery');
@@ -17,9 +16,10 @@ const galleryPopupImage = document.querySelector('.popup__image');
 const photoPopupForm = document.querySelector('.popup__form_place_photo');
 const cardsContainer = document.querySelector('.cards'); // родительский блок для карточек
 const cardsTemplate = document.querySelector('.cards-template').content; // содержание тега template
+const popups = document.querySelectorAll('.popup');
 
 // Общая кнопка «крестик» для попапов
-function closePopupClick(event) {
+function closePopupOnCross(event) {
 	const targetPopup = event.target.closest('.popup');
 	closePopup(targetPopup);
 }
@@ -83,11 +83,30 @@ function removeCard(event) {
 	targetCard.remove();
 }
 
+// Закрыть попап при клике на оверлей
+function closePopupOnOverlay(event) {
+	const targetOverlay = event.target;
+	closePopup(targetOverlay);
+}
+
+// Закрыть попап при нажатии на escape (деревяный вариант)
+function closePopupOnEscape(event) {
+	if (event.key === 'Escape') {
+		closePopup(profilePopup);
+		closePopup(photoPopup);
+		closePopup(galleryPopup);
+	}
+}
+
+document.addEventListener('keydown', closePopupOnEscape); // деревяный вариант
+
 profileEditBtn.addEventListener('click', getProfilePopup);
 
 addPhotoBtn.addEventListener('click', () => showPopup(photoPopup));
 
-popupCloseBtns.forEach(button => button.addEventListener('click', closePopupClick));
+popupCloseBtns.forEach(button => button.addEventListener('click', closePopupOnCross));
+
+popups.forEach(overlayEl => overlayEl.addEventListener('click', closePopupOnOverlay));
 
 photoPopupForm.addEventListener('submit', addCardHandler);
 
