@@ -95,9 +95,8 @@ function closePopupOnOverlay(event) {
 function closePopupOnEscape(event) {
 	const escape = event.key === 'Escape';
 	if (escape) {
-		closePopup(profilePopup);
-		closePopup(photoPopup);
-		closePopup(galleryPopup);
+		const openedPopup = document.querySelector('.popup_opened');
+		closePopup(openedPopup);
 	}
 }
 

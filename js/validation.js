@@ -59,11 +59,11 @@ const enableValidation = ({ formSelector, inputSelector, submitButtonSelector, i
 	});
 }
 
-// Объект с исходными классами и вызов функции вклуючения валидации
+// Объект с исходными классами и вызов функции включения валидации
 enableValidation({
 	formSelector: '.popup__form',
 	inputSelector: '.popup__input',
 	submitButtonSelector: '.popup__save-btn',
 	inputErrorClass: 'popup__input_type_error',
-	errorClass: 'popup__input-error_visible'
+	errorClass: 'popup__input-error_visible',
 });
