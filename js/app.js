@@ -106,7 +106,7 @@ addPhotoBtn.addEventListener('click', () => showPopup(photoPopup));
 
 popupCloseBtns.forEach(button => button.addEventListener('click', closePopupOnCross));
 
-popups.forEach(overlayEl => overlayEl.addEventListener('mousedown', closePopupOnOverlay));
+popups.forEach(overlayEl => overlayEl.addEventListener('mouseup', closePopupOnOverlay));
 
 photoPopupForm.addEventListener('submit', addCardHandler);
 
@@ -134,4 +134,8 @@ function addCard(card) {
 }
 
 // Добавляем отрендеренные карточки на страницу
-initialCards.forEach(arrItem => addCard(getCard(arrItem)));
+initialCards.forEach(function (arrItem) {
+	addCard(getCard(arrItem));
+});
+
+// initialCards.forEach(arrItem => addCard(getCard(arrItem)));
