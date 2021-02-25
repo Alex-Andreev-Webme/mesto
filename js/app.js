@@ -106,7 +106,7 @@ addPhotoBtn.addEventListener('click', () => showPopup(photoPopup));
 
 popupCloseBtns.forEach(button => button.addEventListener('click', closePopupOnCross));
 
-popups.forEach(overlayEl => overlayEl.addEventListener('mouseup', closePopupOnOverlay));
+popups.forEach(overlayEl => overlayEl.addEventListener('mousedown', closePopupOnOverlay));
 
 photoPopupForm.addEventListener('submit', addCardHandler);
 
