@@ -36,7 +36,7 @@ function closePopup(popup) {
 	document.removeEventListener('keydown', closePopupOnEscape);
 }
 
-// Получаем актуальыне данные профиля
+// Получаем актуальные данные профиля
 function getProfilePopup() {
 	showPopup(profilePopup);
 	profilePopupNameInput.value = userName.textContent;
@@ -137,5 +137,3 @@ function addCard(card) {
 initialCards.forEach(function (arrItem) {
 	addCard(getCard(arrItem));
 });
-
-// initialCards.forEach(arrItem => addCard(getCard(arrItem)));
