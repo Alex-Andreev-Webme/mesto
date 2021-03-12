@@ -1,14 +1,13 @@
 class Card {
-	constructor(item, showGalleryPopup) {
-		this._image = item.src
-		this._title = item.title
-		this._alt = item.alt
-		this._showGalleryPopup = showGalleryPopup
+	constructor(image, title) {
+		this._image = image
+		this._title = title
 	}
 
 	_getCard() {
 		const cardEl = document
-			.querySelector('.cards-template').content
+			.querySelector('.cards-template')
+			.content
 			.querySelector('.card')
 			.cloneNode(true)
 
@@ -19,15 +18,13 @@ class Card {
 		this._element = this._getCard()
 		this._setEventListeners()
 		this._element.querySelector('.card__image').src = this._image
-		this._element.querySelector('.card__image').atl = this._alt
 		this._element.querySelector('.card__title').textContent = this._title
 
 		return this._element
 	}
 
 	_setEventListeners() {
-		const removeBtn = this._element.querySelector('.card__remove-btn')
-		removeBtn.addEventListener('click', () => {
+		this._element.querySelector('.card__remove-btn').addEventListener('click', () => {
 			this._removeCard()
 		})
 
@@ -36,9 +33,8 @@ class Card {
 			this._likeCard()
 		})
 
-		this._cardImage = this._element.querySelector('.card__image')
-		this._cardImage.addEventListener('click', (event) => {
-			this._showGalleryPopup(event)
+		this._element.querySelector('.card__image').addEventListener('click', () => {
+			this._prewievCard()
 		})
 	}
 
@@ -48,6 +44,10 @@ class Card {
 
 	_likeCard() {
 		this._likeBtn.classList.toggle('card__like-btn_active')
+	}
+
+	_prewievCard() {
+		console.log('(_Y_)')
 	}
 }
 

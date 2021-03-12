@@ -1,6 +1,3 @@
-import Card from './Card.js'
-import initialCards from './data.js'
-
 const profileEditBtn = document.querySelector('.profile__edit-btn');
 const userName = document.querySelector('.profile__name');
 const userAbout = document.querySelector('.profile__about');
@@ -14,11 +11,7 @@ const profilePopupNameInput = document.querySelector('.popup__input_type_name');
 const profilePopupAboutInput = document.querySelector('.popup__input_type_about');
 const photoInputLink = document.querySelector('.popup__input_type_link');
 const photoInputTitle = document.querySelector('.popup__input_type_title');
-const galleryPopupTitle = document.querySelector('.popup__title_place_gallery');
-const galleryPopupImage = document.querySelector('.popup__image');
 const photoPopupForm = document.querySelector('.popup__form_place_photo');
-// const cardsContainer = document.querySelector('.cards'); // родительский блок для карточек
-// const cardsTemplate = document.querySelector('.cards-template').content; // содержание тега template
 const popups = document.querySelectorAll('.popup');
 
 // Общая кнопка «крестик» для попапов
@@ -27,16 +20,31 @@ function closePopupOnCross(event) {
 	closePopup(targetPopup);
 }
 
-// Открываем попап
+// Открыть попап
 function showPopup(popup) {
 	popup.classList.add('popup_opened');
 	document.addEventListener('keydown', closePopupOnEscape);
 }
 
-// Закрываем попап
+// Закрыть попап
 function closePopup(popup) {
 	popup.classList.remove('popup_opened');
 	document.removeEventListener('keydown', closePopupOnEscape);
+}
+
+// Закрыть попап при клике на оверлей
+function closePopupOnOverlay(event) {
+	const targetOverlay = event.target;
+	closePopup(targetOverlay);
+}
+
+// Закрыть попап при нажатии на escape
+function closePopupOnEscape(event) {
+	const escape = event.key === 'Escape';
+	if (escape) {
+		const openedPopup = document.querySelector('.popup_opened');
+		closePopup(openedPopup);
+	}
 }
 
 // Получаем актуальные данные профиля
@@ -72,35 +80,11 @@ function showGalleryPopup(event) {
 	const targetItem = targetEl.closest('.card');
 	const cardTitle = targetItem.querySelector('.card__title');
 	const cardImage = targetItem.querySelector('.card__image');
+	const galleryPopupTitle = document.querySelector('.popup__title_place_gallery');
+	const galleryPopupImage = document.querySelector('.popup__image');
 	galleryPopupTitle.textContent = cardTitle.textContent;
 	galleryPopupImage.src = cardImage.src;
 	showPopup(galleryPopup);
-}
-
-// Поставить лайк
-// function likeCard(event) {
-// 	event.target.classList.toggle('card__like-btn_active');
-// }
-
-// Удалить карточку
-// function removeCard(event) {
-// 	const targetCard = event.target.closest('.card');
-// 	targetCard.remove();
-// }
-
-// Закрыть попап при клике на оверлей
-function closePopupOnOverlay(event) {
-	const targetOverlay = event.target;
-	closePopup(targetOverlay);
-}
-
-// Закрыть попап при нажатии на escape
-function closePopupOnEscape(event) {
-	const escape = event.key === 'Escape';
-	if (escape) {
-		const openedPopup = document.querySelector('.popup_opened');
-		closePopup(openedPopup);
-	}
 }
 
 profileEditBtn.addEventListener('click', getProfilePopup);
@@ -115,35 +99,12 @@ photoPopupForm.addEventListener('submit', addCardHandler);
 
 profilePopupForm.addEventListener('submit', profileSubmitHandler);
 
-// Добавляем карточки из массива
-// function getCard(arrItem) {
-// 	const cardElement = cardsTemplate.cloneNode(true);
-// 	const cardImage = cardElement.querySelector('.card__image');
-// 	const cardTitle = cardElement.querySelector('.card__title');
-// 	cardImage.src = arrItem.src;
-// 	cardImage.alt = arrItem.alt;
-// 	cardTitle.textContent = arrItem.title;
-// 	const removeBtn = cardElement.querySelector('.card__remove-btn');
-// 	const likeBtn = cardElement.querySelector('.card__like-btn');
-// 	removeBtn.addEventListener('click', removeCard);
-// 	likeBtn.addEventListener('click', likeCard);
-// 	cardImage.addEventListener('click', showGalleryPopup);
-// 	return cardElement;
-// }
+import Card from './Card.js'
+import initialCards from './data.js'
 
-// Вставляем карточки в соответствующий контейнер
-// function addCard(card) {
-// 	cardsContainer.prepend(card);
-// }
-
-// Добавляем отрендеренные карточки на страницу
-// initialCards.forEach(function (arrItem) {
-// 	addCard(getCard(arrItem));
-// });
-
+// Добавление карточек на страницу
 initialCards.forEach(item => {
-	const card = new Card(item, showGalleryPopup)
-	console.dir(card)
+	const card = new Card(item.src, item.title)
 	const cardEl = card.generateCard()
 	const cardsContainer = document.querySelector('.cards')
 	cardsContainer.prepend(cardEl)

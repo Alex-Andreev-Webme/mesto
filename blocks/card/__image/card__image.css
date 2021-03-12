@@ -8,5 +8,5 @@
 
 .card__image:hover {
 	opacity: .8;
-	transform: scale(1.25);
+	transform: scale(1.1);
 }

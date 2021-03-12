@@ -3,9 +3,8 @@
 	min-width: 22px;
 	min-height: 20px;
 	border: none;
+	outline: none;
 	background: url("../../../images/icons/like.svg") no-repeat center;
-}
-
-.card__like-btn:hover {
-	transform: scale(1.25);
+	cursor: pointer;
+	transition: .2s ease;
 }
