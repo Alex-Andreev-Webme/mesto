@@ -1,3 +1,6 @@
+import Card from './Card.js'
+import initialCards from './data.js'
+
 const profileEditBtn = document.querySelector('.profile__edit-btn');
 const userName = document.querySelector('.profile__name');
 const userAbout = document.querySelector('.profile__about');
@@ -49,9 +52,9 @@ function closePopupOnEscape(event) {
 
 // Получаем актуальные данные профиля
 function getProfilePopup() {
-	showPopup(profilePopup);
 	profilePopupNameInput.value = userName.textContent;
 	profilePopupAboutInput.value = userAbout.textContent;
+	showPopup(profilePopup);
 }
 
 // Обработчик формы редактирования профиля
@@ -63,7 +66,7 @@ function profileSubmitHandler(event) {
 }
 
 // Обработчик формы добавления новой карточки на страницу
-function addCardHandler(event) {
+function addNewCard(event) {
 	event.preventDefault();
 	const inputLinkValue = photoInputLink.value;
 	const inputTitleValue = photoInputTitle.value;
@@ -75,7 +78,7 @@ function addCardHandler(event) {
 }
 
 // Попап галереи
-function showGalleryPopup(event) {
+function previewCardImage(event) {
 	const targetEl = event.target;
 	const targetItem = targetEl.closest('.card');
 	const cardTitle = targetItem.querySelector('.card__title');
@@ -95,12 +98,10 @@ popupCloseBtns.forEach(button => button.addEventListener('click', closePopupOnCr
 
 popups.forEach(overlayEl => overlayEl.addEventListener('mousedown', closePopupOnOverlay));
 
-photoPopupForm.addEventListener('submit', addCardHandler);
+photoPopupForm.addEventListener('submit', addNewCard);
 
 profilePopupForm.addEventListener('submit', profileSubmitHandler);
 
-import Card from './Card.js'
-import initialCards from './data.js'
 
 // Добавление карточек на страницу
 initialCards.forEach(item => {

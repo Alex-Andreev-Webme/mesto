@@ -6,12 +6,12 @@ class Card {
 
 	_getCard() {
 		const cardEl = document
-			.querySelector('.cards-template')
-			.content
+			.querySelector('.cards-template').content
 			.querySelector('.card')
 			.cloneNode(true)
 
 		return cardEl
+
 	}
 
 	generateCard() {
@@ -32,10 +32,6 @@ class Card {
 		this._likeBtn.addEventListener('click', () => {
 			this._likeCard()
 		})
-
-		this._element.querySelector('.card__image').addEventListener('click', () => {
-			this._prewievCard()
-		})
 	}
 
 	_removeCard() {
@@ -44,10 +40,6 @@ class Card {
 
 	_likeCard() {
 		this._likeBtn.classList.toggle('card__like-btn_active')
-	}
-
-	_prewievCard() {
-		console.log('(_Y_)')
 	}
 }
 
