@@ -1,3 +1,6 @@
+import Card from './Card.js'
+import initialCards from './data.js'
+
 const profileEditBtn = document.querySelector('.profile__edit-btn');
 const userName = document.querySelector('.profile__name');
 const userAbout = document.querySelector('.profile__about');
@@ -14,8 +17,8 @@ const photoInputTitle = document.querySelector('.popup__input_type_title');
 const galleryPopupTitle = document.querySelector('.popup__title_place_gallery');
 const galleryPopupImage = document.querySelector('.popup__image');
 const photoPopupForm = document.querySelector('.popup__form_place_photo');
-const cardsContainer = document.querySelector('.cards'); // родительский блок для карточек
-const cardsTemplate = document.querySelector('.cards-template').content; // содержание тега template
+// const cardsContainer = document.querySelector('.cards'); // родительский блок для карточек
+// const cardsTemplate = document.querySelector('.cards-template').content; // содержание тега template
 const popups = document.querySelectorAll('.popup');
 
 // Общая кнопка «крестик» для попапов
@@ -75,15 +78,15 @@ function showGalleryPopup(event) {
 }
 
 // Поставить лайк
-function likeCard(event) {
-	event.target.classList.toggle('card__like-btn_active');
-}
+// function likeCard(event) {
+// 	event.target.classList.toggle('card__like-btn_active');
+// }
 
 // Удалить карточку
-function removeCard(event) {
-	const targetCard = event.target.closest('.card');
-	targetCard.remove();
-}
+// function removeCard(event) {
+// 	const targetCard = event.target.closest('.card');
+// 	targetCard.remove();
+// }
 
 // Закрыть попап при клике на оверлей
 function closePopupOnOverlay(event) {
@@ -113,27 +116,35 @@ photoPopupForm.addEventListener('submit', addCardHandler);
 profilePopupForm.addEventListener('submit', profileSubmitHandler);
 
 // Добавляем карточки из массива
-function getCard(arrItem) {
-	const cardElement = cardsTemplate.cloneNode(true);
-	const cardImage = cardElement.querySelector('.card__image');
-	const cardTitle = cardElement.querySelector('.card__title');
-	cardImage.src = arrItem.src;
-	cardImage.alt = arrItem.alt;
-	cardTitle.textContent = arrItem.title;
-	const removeBtn = cardElement.querySelector('.card__remove-btn');
-	const likeBtn = cardElement.querySelector('.card__like-btn');
-	removeBtn.addEventListener('click', removeCard);
-	likeBtn.addEventListener('click', likeCard);
-	cardImage.addEventListener('click', showGalleryPopup);
-	return cardElement;
-}
+// function getCard(arrItem) {
+// 	const cardElement = cardsTemplate.cloneNode(true);
+// 	const cardImage = cardElement.querySelector('.card__image');
+// 	const cardTitle = cardElement.querySelector('.card__title');
+// 	cardImage.src = arrItem.src;
+// 	cardImage.alt = arrItem.alt;
+// 	cardTitle.textContent = arrItem.title;
+// 	const removeBtn = cardElement.querySelector('.card__remove-btn');
+// 	const likeBtn = cardElement.querySelector('.card__like-btn');
+// 	removeBtn.addEventListener('click', removeCard);
+// 	likeBtn.addEventListener('click', likeCard);
+// 	cardImage.addEventListener('click', showGalleryPopup);
+// 	return cardElement;
+// }
 
 // Вставляем карточки в соответствующий контейнер
-function addCard(card) {
-	cardsContainer.prepend(card);
-}
+// function addCard(card) {
+// 	cardsContainer.prepend(card);
+// }
 
 // Добавляем отрендеренные карточки на страницу
-initialCards.forEach(function (arrItem) {
-	addCard(getCard(arrItem));
-});
+// initialCards.forEach(function (arrItem) {
+// 	addCard(getCard(arrItem));
+// });
+
+initialCards.forEach(item => {
+	const card = new Card(item, showGalleryPopup)
+	console.dir(card)
+	const cardEl = card.generateCard()
+	const cardsContainer = document.querySelector('.cards')
+	cardsContainer.prepend(cardEl)
+})

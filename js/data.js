@@ -30,3 +30,5 @@ const initialCards = [
 		alt: 'Озеро Джека Лондона, Магадан',
 	},
 ];
+
+export default initialCards;
