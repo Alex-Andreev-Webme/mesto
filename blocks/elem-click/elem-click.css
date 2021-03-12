@@ -1,6 +1,6 @@
 .elem-click {
 	outline: none;
-	transition: .2s ease;
+	transition: .3s ease;
 }
 
 .elem-click:hover {
