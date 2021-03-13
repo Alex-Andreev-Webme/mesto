@@ -7,14 +7,11 @@ const userAbout = document.querySelector('.profile__about');
 const addPhotoBtn = document.querySelector('.profile__add-btn');
 const profilePopup = document.querySelector('.popup_place_profile');
 const photoPopup = document.querySelector('.popup_place_photo');
-const galleryPopup = document.querySelector('.popup_place_gallery');
+const photoPopupForm = document.querySelector('.popup__form_place_photo');
 const popupCloseBtns = document.querySelectorAll('.popup__close-btn');
 const profilePopupForm = document.querySelector('.popup__form');
 const profilePopupNameInput = document.querySelector('.popup__input_type_name');
 const profilePopupAboutInput = document.querySelector('.popup__input_type_about');
-const photoInputLink = document.querySelector('.popup__input_type_link');
-const photoInputTitle = document.querySelector('.popup__input_type_title');
-const photoPopupForm = document.querySelector('.popup__form_place_photo');
 const popups = document.querySelectorAll('.popup');
 
 // Общая кнопка «крестик» для попапов
@@ -67,28 +64,28 @@ function profileSubmitHandler(event) {
 
 // Обработчик формы добавления новой карточки на страницу
 function addNewCard(event) {
-	event.preventDefault();
+	event.preventDefault()
+	const photoInputLink = document.querySelector('.popup__input_type_link');
+	const photoInputTitle = document.querySelector('.popup__input_type_title');
 	const inputLinkValue = photoInputLink.value;
 	const inputTitleValue = photoInputTitle.value;
-	const cardItem = getCard({ src: inputLinkValue, title: inputTitleValue });
-	addCard(cardItem);
-	photoInputLink.value = '';
-	photoInputTitle.value = '';
-	closePopup(photoPopup);
+	const card = new Card({ src: inputLinkValue, title: inputTitleValue }, previewCardImage)
+	const cardEl = card.generateCard()
+	const cardsContainer = document.querySelector('.cards')
+	cardsContainer.prepend(cardEl)
+	photoPopupForm.reset()
+	closePopup(photoPopup)
 }
 
-// Попап галереи
-// function previewCardImage(event) {
-// 	const targetEl = event.target;
-// 	const targetItem = targetEl.closest('.card');
-// 	const cardTitle = targetItem.querySelector('.card__title');
-// 	const cardImage = targetItem.querySelector('.card__image');
-// 	const galleryPopupTitle = document.querySelector('.popup__title_place_gallery');
-// 	const galleryPopupImage = document.querySelector('.popup__image');
-// 	galleryPopupTitle.textContent = cardTitle.textContent;
-// 	galleryPopupImage.src = cardImage.src;
-// 	showPopup(galleryPopup);
-// }
+// Попап превью фото карточки
+function previewCardImage(image, title) {
+	const previewPopup = document.querySelector('.popup_place_gallery');
+	const previewPopupTitle = previewPopup.querySelector('.popup__title_place_gallery');
+	const previewPopupImage = previewPopup.querySelector('.popup__image');
+	previewPopupImage.src = image;
+	previewPopupTitle.textContent = title;
+	showPopup(previewPopup);
+}
 
 profileEditBtn.addEventListener('click', getProfilePopup);
 
@@ -102,10 +99,10 @@ photoPopupForm.addEventListener('submit', addNewCard);
 
 profilePopupForm.addEventListener('submit', profileSubmitHandler);
 
-
 // Добавление карточек на страницу
 initialCards.forEach(item => {
-	const card = new Card(item)
+	const card = new Card(item, previewCardImage)
+	console.log(card)
 	const cardEl = card.generateCard()
 	const cardsContainer = document.querySelector('.cards')
 	cardsContainer.prepend(cardEl)
