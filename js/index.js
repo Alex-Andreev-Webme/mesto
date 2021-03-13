@@ -78,17 +78,17 @@ function addNewCard(event) {
 }
 
 // Попап галереи
-function previewCardImage(event) {
-	const targetEl = event.target;
-	const targetItem = targetEl.closest('.card');
-	const cardTitle = targetItem.querySelector('.card__title');
-	const cardImage = targetItem.querySelector('.card__image');
-	const galleryPopupTitle = document.querySelector('.popup__title_place_gallery');
-	const galleryPopupImage = document.querySelector('.popup__image');
-	galleryPopupTitle.textContent = cardTitle.textContent;
-	galleryPopupImage.src = cardImage.src;
-	showPopup(galleryPopup);
-}
+// function previewCardImage(event) {
+// 	const targetEl = event.target;
+// 	const targetItem = targetEl.closest('.card');
+// 	const cardTitle = targetItem.querySelector('.card__title');
+// 	const cardImage = targetItem.querySelector('.card__image');
+// 	const galleryPopupTitle = document.querySelector('.popup__title_place_gallery');
+// 	const galleryPopupImage = document.querySelector('.popup__image');
+// 	galleryPopupTitle.textContent = cardTitle.textContent;
+// 	galleryPopupImage.src = cardImage.src;
+// 	showPopup(galleryPopup);
+// }
 
 profileEditBtn.addEventListener('click', getProfilePopup);
 
@@ -105,7 +105,7 @@ profilePopupForm.addEventListener('submit', profileSubmitHandler);
 
 // Добавление карточек на страницу
 initialCards.forEach(item => {
-	const card = new Card(item.src, item.title)
+	const card = new Card(item)
 	const cardEl = card.generateCard()
 	const cardsContainer = document.querySelector('.cards')
 	cardsContainer.prepend(cardEl)

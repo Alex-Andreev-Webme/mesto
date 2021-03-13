@@ -1,7 +1,7 @@
 class Card {
-	constructor(image, title) {
-		this._image = image
-		this._title = title
+	constructor(data) {
+		this._image = data.src
+		this._title = data.title
 	}
 
 	_getCard() {
@@ -32,6 +32,10 @@ class Card {
 		this._likeBtn.addEventListener('click', () => {
 			this._likeCard()
 		})
+
+		this._element.querySelector('.card__image').addEventListener('click', () => {
+			this._previewCardImage()
+		})
 	}
 
 	_removeCard() {
@@ -40,6 +44,15 @@ class Card {
 
 	_likeCard() {
 		this._likeBtn.classList.toggle('card__like-btn_active')
+	}
+
+	_previewCardImage() {
+		const previewCardPopup = document.querySelector('.popup_place_gallery')
+		const previewCardImage = document.querySelector('.popup__image')
+		const previewCardTitle = document.querySelector('.popup__title_place_gallery')
+		previewCardImage.src = this._image
+		previewCardTitle.textContent = this._title
+		previewCardPopup.classList.add('popup_opened')
 	}
 }
 
