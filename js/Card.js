@@ -39,8 +39,16 @@ class Card {
 	}
 
 	_removeCard() {
-		this._element.remove()
-		this._element = null
+		// setInterval(() => {
+		// 	console.dir(this._element)
+		// 	// this._element.remove()
+		// }, 1000);
+		this._element.style.transform = 'scale(0)'
+		this._element.style.opacity = '0'
+		setTimeout(() => {
+			this._element.remove()
+			this._element = null
+		}, 500);
 	}
 
 	_likeCard() {

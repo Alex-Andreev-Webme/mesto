@@ -6,4 +6,5 @@
 	color: #fff;
 	overflow: hidden;
 	position: relative;
+	transition: .8s ease;
 }

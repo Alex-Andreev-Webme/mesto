@@ -25,7 +25,6 @@ const initialCards = [
 	},
 ];
 
-// Объект с исходными классами и включение валидации
 const validationConfig = {
 	formSelector: '.popup__form',
 	inputSelector: '.popup__input',
