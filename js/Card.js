@@ -12,7 +12,6 @@ class Card {
 			.cloneNode(true)
 
 		return cardEl
-
 	}
 
 	generateCard() {
@@ -41,6 +40,7 @@ class Card {
 
 	_removeCard() {
 		this._element.remove()
+		this._element = null
 	}
 
 	_likeCard() {

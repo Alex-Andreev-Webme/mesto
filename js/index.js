@@ -1,9 +1,10 @@
 import Card from './Card.js'
-import initialCards from './data.js'
+import { initialCards, validationConfig } from './data.js'
+import FormValidator from './FormValidator.js'
 
 const profileEditBtn = document.querySelector('.profile__edit-btn');
-const userName = document.querySelector('.profile__name');
-const userAbout = document.querySelector('.profile__about');
+const profileName = document.querySelector('.profile__name');
+const profileAbout = document.querySelector('.profile__about');
 const addPhotoBtn = document.querySelector('.profile__add-btn');
 const profilePopup = document.querySelector('.popup_place_profile');
 const photoPopup = document.querySelector('.popup_place_photo');
@@ -22,6 +23,14 @@ function closePopupOnCross(event) {
 
 // Открыть попап
 function showPopup(popup) {
+	const inputErrorClass = document.querySelectorAll(`.${validationConfig.inputErrorClass}`)
+	inputErrorClass.forEach(item => {
+		item.classList.remove('popup__input_type_error')
+	})
+	const textErrorElements = document.querySelectorAll(`.${validationConfig.textErrorClass}`)
+	textErrorElements.forEach(item => {
+		item.textContent = ""
+	})
 	popup.classList.add('popup_opened');
 	document.addEventListener('keydown', closePopupOnEscape);
 }
@@ -49,8 +58,10 @@ function closePopupOnEscape(event) {
 
 // Получаем актуальные данные профиля
 function getProfilePopup() {
-	profilePopupNameInput.value = userName.textContent;
-	profilePopupAboutInput.value = userAbout.textContent;
+	profilePopupNameInput.value = profileName.textContent;
+	profilePopupAboutInput.value = profileAbout.textContent;
+	const profilePopupSaveBtn = profilePopup.querySelector('.popup__save-btn')
+	profileFormValidator.disablePopupBtn([profilePopupNameInput, profilePopupAboutInput], profilePopupSaveBtn)
 	showPopup(profilePopup);
 }
 
@@ -73,7 +84,6 @@ function addNewCard(event) {
 	const cardEl = card.generateCard()
 	const cardsContainer = document.querySelector('.cards')
 	cardsContainer.prepend(cardEl)
-	photoPopupForm.reset()
 	closePopup(photoPopup)
 }
 
@@ -89,7 +99,10 @@ function previewCardImage(image, title) {
 
 profileEditBtn.addEventListener('click', getProfilePopup);
 
-addPhotoBtn.addEventListener('click', () => showPopup(photoPopup));
+addPhotoBtn.addEventListener('click', () => {
+	photoPopupForm.reset()
+	showPopup(photoPopup)
+});
 
 popupCloseBtns.forEach(button => button.addEventListener('click', closePopupOnCross));
 
@@ -102,8 +115,15 @@ profilePopupForm.addEventListener('submit', profileSubmitHandler);
 // Добавление карточек на страницу
 initialCards.forEach(item => {
 	const card = new Card(item, previewCardImage)
-	console.log(card)
 	const cardEl = card.generateCard()
 	const cardsContainer = document.querySelector('.cards')
 	cardsContainer.prepend(cardEl)
 })
+
+// Валидация профиля
+const profileFormValidator = new FormValidator(validationConfig, profilePopupForm);
+profileFormValidator.enableValidation();
+
+// Валидация добавления фото
+const photoFormValidator = new FormValidator(validationConfig, photoPopupForm);
+photoFormValidator.enableValidation();

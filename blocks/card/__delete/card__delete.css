@@ -1,9 +1,0 @@
-.card__delete {
-	position: absolute;
-	top: 18px;
-	right: 15px;
-}
-
-.card__delete:hover {
-	transform: scale(1.2);
-}
