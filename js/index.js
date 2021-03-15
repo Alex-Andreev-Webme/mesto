@@ -97,7 +97,7 @@ function clearPopupErrors(popup) {
 		item.classList.remove('popup__input_type_error')
 	})
 
-	const textErrorElements = popup.querySelectorAll(`.${validationConfig.textErrorClass}`);
+	const textErrorElements = popup.querySelectorAll(`.${validationConfig.textErrorClass}`)
 	textErrorElements.forEach(item => {
 		item.textContent = ""
 	})
