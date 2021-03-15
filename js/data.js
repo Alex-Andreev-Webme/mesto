@@ -23,7 +23,7 @@ const initialCards = [
 		title: 'Озеро Джека Лондона',
 		src: './images/card-ozero_dzeka_londona.jpg',
 	},
-];
+]
 
 const validationConfig = {
 	formSelector: '.popup__form',
@@ -31,6 +31,6 @@ const validationConfig = {
 	submitButtonSelector: '.popup__save-btn',
 	inputErrorClass: 'popup__input_type_error',
 	textErrorClass: 'popup__input-error_visible'
-};
+}
 
-export { initialCards, validationConfig };
+export { initialCards, validationConfig }

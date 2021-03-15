@@ -1,13 +1,14 @@
 class Card {
-	constructor(data, previewCardImage) {
+	constructor(data, templateSelector, previewCardImage) {
 		this._image = data.src
 		this._title = data.title
+		this._templateSelector = templateSelector
 		this._previewCardImage = previewCardImage
 	}
 
 	_getCard() {
-		const cardEl = document
-			.querySelector('.cards-template').content
+		const cardEl = this._templateSelector
+			.content
 			.querySelector('.card')
 			.cloneNode(true)
 
@@ -39,10 +40,6 @@ class Card {
 	}
 
 	_removeCard() {
-		// setInterval(() => {
-		// 	console.dir(this._element)
-		// 	// this._element.remove()
-		// }, 1000);
 		this._element.style.transform = 'scale(0)'
 		this._element.style.opacity = '0'
 		setTimeout(() => {
