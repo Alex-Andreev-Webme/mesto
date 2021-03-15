@@ -99,7 +99,7 @@ function clearPopupErrors(popup) {
 
 	const textErrorElements = popup.querySelectorAll(`.${validationConfig.textErrorClass}`)
 	textErrorElements.forEach(item => {
-		item.textContent = ""
+		item.textContent = ''
 	})
 }
 

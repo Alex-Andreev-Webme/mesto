@@ -1,6 +1,7 @@
 class Card {
 	constructor(data, templateSelector, previewCardImage) {
 		this._image = data.src
+		this._alt = data.alt
 		this._title = data.title
 		this._templateSelector = templateSelector
 		this._previewCardImage = previewCardImage
@@ -19,6 +20,7 @@ class Card {
 		this._element = this._getCard()
 		this._setEventListeners()
 		this._element.querySelector('.card__image').src = this._image
+		this._element.querySelector('.card__image').alt = this._alt
 		this._element.querySelector('.card__title').textContent = this._title
 
 		return this._element

@@ -47,12 +47,12 @@ class FormValidator {
 	}
 
 	// Переключаем класс у кнопки в зависимости от валидности полей
-	disablePopupBtn(inputList, ButtonEl) {
+	disablePopupBtn(inputList, buttonEl) {
 		const hasNotValidInput = inputList.some(InputEl => !InputEl.validity.valid)
 		if (hasNotValidInput) {
-			ButtonEl.setAttribute('disabled', true)
+			buttonEl.setAttribute('disabled', true)
 		} else {
-			ButtonEl.removeAttribute('disabled')
+			buttonEl.removeAttribute('disabled')
 		}
 	}
 
@@ -62,14 +62,14 @@ class FormValidator {
 			event.preventDefault()
 		});
 		const inputList = Array.from(this._formEl.querySelectorAll(this._inputSelector))
-		const ButtonEl = this._formEl.querySelector(this._submitButtonSelector)
+		const buttonEl = this._formEl.querySelector(this._submitButtonSelector)
 		inputList.forEach(inputEl => {
 			inputEl.addEventListener('input', () => {
 				this._checkInputValidity(inputEl)
-				this.disablePopupBtn(inputList, ButtonEl)
+				this.disablePopupBtn(inputList, buttonEl)
 			})
 		})
-		this.disablePopupBtn(inputList, ButtonEl)
+		this.disablePopupBtn(inputList, buttonEl)
 	}
 
 	enableValidation() {
