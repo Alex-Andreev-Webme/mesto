@@ -47,7 +47,7 @@ class Card {
 		setTimeout(() => {
 			this._element.remove()
 			this._element = null
-		}, 500);
+		}, 800);
 	}
 
 	_likeCard() {
