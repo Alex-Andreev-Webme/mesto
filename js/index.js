@@ -13,8 +13,14 @@ const popupCloseBtns = document.querySelectorAll('.popup__close-btn')
 const profilePopupForm = document.querySelector('.popup__form')
 const profilePopupNameInput = document.querySelector('.popup__input_type_name')
 const profilePopupAboutInput = document.querySelector('.popup__input_type_about')
+const photoInputLink = document.querySelector('.popup__input_type_link')
+const photoInputTitle = document.querySelector('.popup__input_type_title')
+const previewPopup = document.querySelector('.popup_place_gallery')
+const previewPopupTitle = previewPopup.querySelector('.popup__title_place_gallery')
+const previewPopupImage = previewPopup.querySelector('.popup__image')
 const popups = document.querySelectorAll('.popup')
 const cardsTemplate = document.querySelector('.cards-template')
+const cardsContainer = document.querySelector('.cards')
 
 // Общая кнопка «крестик» для попапов
 function closePopupOnCross(event) {
@@ -69,48 +75,42 @@ function profileSubmitHandler(event) {
 // Обработчик формы добавления новой карточки на страницу
 function addNewCard(event) {
 	event.preventDefault()
-	const photoInputLink = document.querySelector('.popup__input_type_link')
-	const photoInputTitle = document.querySelector('.popup__input_type_title')
 	const inputLinkValue = photoInputLink.value
 	const inputTitleValue = photoInputTitle.value
 	const card = new Card({ src: inputLinkValue, title: inputTitleValue }, cardsTemplate, previewCardImage)
 	const cardEl = card.generateCard()
-	const cardsContainer = document.querySelector('.cards')
 	cardsContainer.prepend(cardEl)
 	closePopup(photoPopup)
 }
 
 // Попап превью фото карточки
 function previewCardImage(image, title) {
-	const previewPopup = document.querySelector('.popup_place_gallery')
-	const previewPopupTitle = previewPopup.querySelector('.popup__title_place_gallery')
-	const previewPopupImage = previewPopup.querySelector('.popup__image')
 	previewPopupImage.src = image
 	previewPopupTitle.textContent = title
 	showPopup(previewPopup)
 }
 
 // Очистка ошибок в попапах
-function clearPopupErrors(popup) {
-	const inputErrorClass = popup.querySelectorAll(`.${validationConfig.inputErrorClass}`)
-	inputErrorClass.forEach(item => {
-		item.classList.remove('popup__input_type_error')
-	})
+// function clearPopupErrors(popup) {
+// 	const inputErrorClass = popup.querySelectorAll(`.${validationConfig.inputErrorClass}`)
+// 	inputErrorClass.forEach(item => {
+// 		item.classList.remove('popup__input_type_error')
+// 	})
 
-	const textErrorElements = popup.querySelectorAll(`.${validationConfig.textErrorClass}`)
-	textErrorElements.forEach(item => {
-		item.textContent = ''
-	})
-}
+// 	const textErrorElements = popup.querySelectorAll(`.${validationConfig.textErrorClass}`)
+// 	textErrorElements.forEach(item => {
+// 		item.textContent = ''
+// 	})
+// }
 
 profileEditBtn.addEventListener('click', () => {
-	clearPopupErrors(profilePopup)
+	// clearPopupErrors(profilePopup)
 	getProfilePopup()
 });
 
 addPhotoBtn.addEventListener('click', () => {
 	photoPopupForm.reset()
-	clearPopupErrors(photoPopup)
+	// clearPopupErrors(photoPopup)
 	showPopup(photoPopup)
 });
 
@@ -126,12 +126,11 @@ profilePopupForm.addEventListener('submit', profileSubmitHandler)
 initialCards.forEach(item => {
 	const card = new Card(item, cardsTemplate, previewCardImage)
 	const cardEl = card.generateCard()
-	const cardsContainer = document.querySelector('.cards')
 	cardsContainer.prepend(cardEl)
 })
 
 // Валидация профиля
-const profileFormValidator = new FormValidator(validationConfig, profilePopupForm)
+const profileFormValidator = new FormValidator(validationConfig, profilePopupForm,)
 profileFormValidator.enableValidation()
 
 // Валидация фото
