@@ -1,5 +1,10 @@
 const initialCards = [
 	{
+		title: 'Ленские столбы',
+		src: './images/card-lenskie-stolby.jpg',
+		alt: 'Ленские столбы, Якутия'
+	},
+	{
 		title: 'Рускеала',
 		src: './images/card-ruskeala.jpg',
 		alt: 'Мраморный каньон Рускеала, Карелия'
@@ -23,11 +28,6 @@ const initialCards = [
 		title: 'Сасык-Сиваш',
 		src: './images/card-sasyk-sivash.jpg',
 		alt: 'Розовое озеро Сасык - Сиваш, Крым'
-	},
-	{
-		title: 'Озеро Джека Лондона',
-		src: './images/card-ozero_dzeka_londona.jpg',
-		alt: 'Озеро Джека Лондона, Магадан'
 	},
 ]
 

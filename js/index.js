@@ -59,7 +59,6 @@ function closePopupOnEscape(event) {
 function getProfilePopup() {
 	profilePopupNameInput.value = profileName.textContent
 	profilePopupAboutInput.value = profileAbout.textContent
-	// profileFormValidator.resetValidation()
 }
 
 // Обработчик формы редактирования профиля
@@ -73,12 +72,21 @@ function profileSubmitHandler(event) {
 // Обработчик формы добавления новой карточки на страницу
 function addNewCard(event) {
 	event.preventDefault()
+	// const inputLinkValue = photoInputLink.value
+	// const inputTitleValue = photoInputTitle.value
+	// const card = new Card({ src: inputLinkValue, title: inputTitleValue }, cardsTemplate, previewCardImage)
+	// const cardEl = card.generateCard()
+	cardsContainer.prepend(createCard())
+	closePopup(photoPopup)
+}
+
+// Возвращаем готовую карточку
+function createCard() {
 	const inputLinkValue = photoInputLink.value
 	const inputTitleValue = photoInputTitle.value
 	const card = new Card({ src: inputLinkValue, title: inputTitleValue }, cardsTemplate, previewCardImage)
 	const cardEl = card.generateCard()
-	cardsContainer.prepend(cardEl)
-	closePopup(photoPopup)
+	return cardEl
 }
 
 // Попап превью фото карточки
