@@ -59,9 +59,7 @@ function closePopupOnEscape(event) {
 function getProfilePopup() {
 	profilePopupNameInput.value = profileName.textContent
 	profilePopupAboutInput.value = profileAbout.textContent
-	const profilePopupSaveBtn = profilePopup.querySelector('.popup__save-btn')
-	profileFormValidator.disablePopupBtn([profilePopupNameInput, profilePopupAboutInput], profilePopupSaveBtn)
-	showPopup(profilePopup)
+	// profileFormValidator.resetValidation()
 }
 
 // Обработчик формы редактирования профиля
@@ -90,27 +88,15 @@ function previewCardImage(image, title) {
 	showPopup(previewPopup)
 }
 
-// Очистка ошибок в попапах
-// function clearPopupErrors(popup) {
-// 	const inputErrorClass = popup.querySelectorAll(`.${validationConfig.inputErrorClass}`)
-// 	inputErrorClass.forEach(item => {
-// 		item.classList.remove('popup__input_type_error')
-// 	})
-
-// 	const textErrorElements = popup.querySelectorAll(`.${validationConfig.textErrorClass}`)
-// 	textErrorElements.forEach(item => {
-// 		item.textContent = ''
-// 	})
-// }
-
 profileEditBtn.addEventListener('click', () => {
-	// clearPopupErrors(profilePopup)
 	getProfilePopup()
+	profileFormValidator.resetValidation()
+	showPopup(profilePopup)
 });
 
 addPhotoBtn.addEventListener('click', () => {
 	photoPopupForm.reset()
-	// clearPopupErrors(photoPopup)
+	photoFormValidator.resetValidation()
 	showPopup(photoPopup)
 });
 
@@ -126,7 +112,7 @@ profilePopupForm.addEventListener('submit', profileSubmitHandler)
 initialCards.forEach(item => {
 	const card = new Card(item, cardsTemplate, previewCardImage)
 	const cardEl = card.generateCard()
-	cardsContainer.prepend(cardEl)
+	cardsContainer.append(cardEl)
 })
 
 // Валидация профиля
