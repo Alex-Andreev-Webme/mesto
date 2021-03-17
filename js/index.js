@@ -130,7 +130,7 @@ initialCards.forEach(item => {
 })
 
 // Валидация профиля
-const profileFormValidator = new FormValidator(validationConfig, profilePopupForm,)
+const profileFormValidator = new FormValidator(validationConfig, profilePopupForm)
 profileFormValidator.enableValidation()
 
 // Валидация фото
