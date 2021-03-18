@@ -16,8 +16,8 @@ const profilePopupAboutInput = document.querySelector('.popup__input_type_about'
 const photoInputLink = document.querySelector('.popup__input_type_link')
 const photoInputTitle = document.querySelector('.popup__input_type_title')
 const previewPopup = document.querySelector('.popup_place_gallery')
-const previewPopupTitle = previewPopup.querySelector('.popup__title_place_gallery')
 const previewPopupImage = previewPopup.querySelector('.popup__image')
+const previewPopupTitle = previewPopup.querySelector('.popup__title_place_gallery')
 const popups = document.querySelectorAll('.popup')
 const cardsTemplate = document.querySelector('.cards-template')
 const cardsContainer = document.querySelector('.cards')
@@ -72,10 +72,6 @@ function profileSubmitHandler(event) {
 // Обработчик формы добавления новой карточки на страницу
 function addNewCard(event) {
 	event.preventDefault()
-	// const inputLinkValue = photoInputLink.value
-	// const inputTitleValue = photoInputTitle.value
-	// const card = new Card({ src: inputLinkValue, title: inputTitleValue }, cardsTemplate, previewCardImage)
-	// const cardEl = card.generateCard()
 	cardsContainer.prepend(createCard())
 	closePopup(photoPopup)
 }
