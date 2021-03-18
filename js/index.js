@@ -1,5 +1,5 @@
 import Card from './Card.js'
-import { initialCards, validationConfig } from './data.js'
+import { initialCards, validationConfig, ESCAPE } from './data.js'
 import FormValidator from './FormValidator.js'
 
 const profileEditBtn = document.querySelector('.profile__edit-btn')
@@ -48,8 +48,7 @@ function closePopupOnOverlay(event) {
 
 // Закрыть попап при нажатии на escape
 function closePopupOnEscape(event) {
-	const escape = event.key === 'Escape'
-	if (escape) {
+	if (event.key === ESCAPE) {
 		const openedPopup = document.querySelector('.popup_opened')
 		closePopup(openedPopup)
 	}
@@ -72,15 +71,13 @@ function profileSubmitHandler(event) {
 // Обработчик формы добавления новой карточки на страницу
 function addNewCard(event) {
 	event.preventDefault()
-	cardsContainer.prepend(createCard())
+	cardsContainer.prepend(createCard(photoInputLink.value, photoInputTitle.value))
 	closePopup(photoPopup)
 }
 
 // Возвращаем готовую карточку
-function createCard() {
-	const inputLinkValue = photoInputLink.value
-	const inputTitleValue = photoInputTitle.value
-	const card = new Card({ src: inputLinkValue, title: inputTitleValue }, cardsTemplate, previewCardImage)
+function createCard(src, title) {
+	const card = new Card({ src, title }, '.cards-template', previewCardImage)
 	const cardEl = card.generateCard()
 	return cardEl
 }
@@ -114,8 +111,7 @@ profilePopupForm.addEventListener('submit', profileSubmitHandler)
 
 // Добавление карточек на страницу
 initialCards.forEach(item => {
-	const card = new Card(item, cardsTemplate, previewCardImage)
-	const cardEl = card.generateCard()
+	const cardEl = createCard(item.src, item.title)
 	cardsContainer.append(cardEl)
 })
 

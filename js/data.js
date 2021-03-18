@@ -39,4 +39,6 @@ const validationConfig = {
 	textErrorClass: 'popup__input-error_visible'
 }
 
-export { initialCards, validationConfig }
+const ESCAPE = 'Escape'
+
+export { initialCards, validationConfig, ESCAPE }
