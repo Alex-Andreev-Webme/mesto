@@ -19,7 +19,6 @@ const previewPopup = document.querySelector('.popup_place_gallery')
 const previewPopupImage = previewPopup.querySelector('.popup__image')
 const previewPopupTitle = previewPopup.querySelector('.popup__title_place_gallery')
 const popups = document.querySelectorAll('.popup')
-const cardsTemplate = document.querySelector('.cards-template')
 const cardsContainer = document.querySelector('.cards')
 
 // Общая кнопка «крестик» для попапов
@@ -68,18 +67,18 @@ function profileSubmitHandler(event) {
 	closePopup(profilePopup)
 }
 
-// Обработчик формы добавления новой карточки на страницу
-function addNewCard(event) {
-	event.preventDefault()
-	cardsContainer.prepend(createCard(photoInputLink.value, photoInputTitle.value))
-	closePopup(photoPopup)
-}
-
 // Возвращаем готовую карточку
 function createCard(src, title) {
 	const card = new Card({ src, title }, '.cards-template', previewCardImage)
 	const cardEl = card.generateCard()
 	return cardEl
+}
+
+// Обработчик формы добавления новой карточки на страницу
+function addNewCard(event) {
+	event.preventDefault()
+	cardsContainer.prepend(createCard(photoInputLink.value, photoInputTitle.value))
+	closePopup(photoPopup)
 }
 
 // Попап превью фото карточки
