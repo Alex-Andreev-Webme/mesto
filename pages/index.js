@@ -1,6 +1,6 @@
-import Card from './Card.js'
-import { initialCards, validationConfig, ESCAPE } from './data.js'
-import FormValidator from './FormValidator.js'
+import Card from '../components/Card.js'
+import { initialCards, validationConfig, ESCAPE } from '../utils/constants.js'
+import FormValidator from '../components/FormValidator.js'
 
 const profileEditBtn = document.querySelector('.profile__edit-btn')
 const profileName = document.querySelector('.profile__name')
