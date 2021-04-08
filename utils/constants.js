@@ -40,5 +40,6 @@ const validationConfig = {
 }
 
 const ESCAPE = 'Escape'
+const cardsContainer = '.cards'
 
-export { initialCards, validationConfig, ESCAPE }
+export { initialCards, validationConfig, ESCAPE, cardsContainer }

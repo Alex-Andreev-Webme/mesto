@@ -1,6 +1,7 @@
+import { initialCards, validationConfig, ESCAPE, cardsContainer } from '../utils/constants.js'
 import Card from '../components/Card.js'
-import { initialCards, validationConfig, ESCAPE } from '../utils/constants.js'
 import FormValidator from '../components/FormValidator.js'
+import Section from '../components/Section.js'
 
 const profileEditBtn = document.querySelector('.profile__edit-btn')
 const profileName = document.querySelector('.profile__name')
@@ -19,7 +20,6 @@ const previewPopup = document.querySelector('.popup_place_gallery')
 const previewPopupImage = previewPopup.querySelector('.popup__image')
 const previewPopupTitle = previewPopup.querySelector('.popup__title_place_gallery')
 const popups = document.querySelectorAll('.popup')
-const cardsContainer = document.querySelector('.cards')
 
 // Общая кнопка «крестик» для попапов
 function closePopupOnCross(event) {
@@ -108,11 +108,19 @@ photoPopupForm.addEventListener('submit', addNewCard)
 
 profilePopupForm.addEventListener('submit', profileSubmitHandler)
 
-// Добавление карточек на страницу
-initialCards.forEach(item => {
-	const cardEl = createCard(item.src, item.title)
-	cardsContainer.append(cardEl)
-})
+
+// Экземпляр класса Section для добавления карточек на страницу
+const cardList = new Section({
+	data: initialCards,
+	renderer: item => {
+		const newCard = new Card(item, '.cards-template')
+		const cardEl = newCard.generateCard()
+		cardList.addItem(cardEl)
+	}
+}, cardsContainer)
+
+cardList.renderItems()
+
 
 // Валидация профиля
 const profileFormValidator = new FormValidator(validationConfig, profilePopupForm)

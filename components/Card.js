@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
 	constructor(data, templateSelector, previewCardImage) {
 		this._image = data.src
 		this._alt = data.alt
@@ -54,5 +54,3 @@ class Card {
 		this._likeBtn.classList.toggle('card__like-btn_active')
 	}
 }
-
-export default Card
