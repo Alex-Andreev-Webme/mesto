@@ -39,7 +39,27 @@ const validationConfig = {
 	textErrorClass: 'popup__input-error_visible'
 }
 
-const ESCAPE = 'Escape'
 const cardsContainer = '.cards'
+const previewPopup = '.popup_place_gallery'
+const photoPopup = '.popup_place_photo'
+const profilePopup = '.popup_place_profile'
+const addCardBtn = document.querySelector('.profile__add-btn')
+const profileEditBtn = document.querySelector('.profile__edit-btn')
+// const profileName = '.profile__name'
+const profileName = '123'
+const profileAbout = '.profile__about'
 
-export { initialCards, validationConfig, ESCAPE, cardsContainer }
+
+
+export {
+	cardsContainer,
+	initialCards,
+	validationConfig,
+	previewPopup,
+	photoPopup,
+	profilePopup,
+	addCardBtn,
+	profileEditBtn,
+	profileName,
+	profileAbout,
+}
