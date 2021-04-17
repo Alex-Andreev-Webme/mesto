@@ -5,4 +5,7 @@
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	background-color: #000;
+	height: 100%;
+	min-height: 100vh;
+	position: relative;
 }

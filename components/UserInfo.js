@@ -13,6 +13,6 @@ export default class UserInfo {
 
 	setUserInfo({ userName, userAbout }) {
 		this._userName.textContent = userName
-		this._userName.textContent = userAbout
+		this._userAbout.textContent = userAbout
 	}
 }
