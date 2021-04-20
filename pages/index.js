@@ -58,6 +58,7 @@ addCardBtn.addEventListener('click', () => {
 	addCardPopup.open()
 });
 
+// Редактирование профиля
 const editProfilePopup = new PopupWithForm({
 	popupSelector: profilePopup,
 	handleFormSubmit: (formData) => {
