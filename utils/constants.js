@@ -52,8 +52,6 @@ const profilePopupAboutInput = document.querySelector('.popup__input_type_about'
 const photoPopupForm = document.querySelector('.popup__form_place_photo')
 const profilePopupForm = document.querySelector('.popup__form')
 
-
-
 export {
 	cardsContainer,
 	initialCards,

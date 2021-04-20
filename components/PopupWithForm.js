@@ -8,7 +8,6 @@ export default class PopupWithForm extends Popup {
 		this._formInputs = this._formEl.querySelectorAll('.popup__input')
 	}
 
-	// Здесь происходит какое-то безумие
 	_getInputValues() {
 		this._inputValues = {}
 		this._formInputs.forEach(input => {

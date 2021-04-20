@@ -22,15 +22,6 @@ import PopupWithImage from '../components/PopupWithImage.js'
 import PopupWithForm from '../components/PopupWithForm.js'
 import UserInfo from '../components/UserInfo.js'
 
-// Обработчик формы редактирования профиля
-// function profileSubmitHandler(event) {
-// 	event.preventDefault();
-// 	profileName.textContent = profilePopupNameInput.value.trim()
-// 	profileAbout.textContent = profilePopupAboutInput.value.trim()
-// 	closePopup(profilePopup)
-// }
-
-
 // Добавление карточек из массива на страницу
 const cardList = new Section(
 	{
@@ -71,9 +62,9 @@ const editProfilePopup = new PopupWithForm({
 	popupSelector: profilePopup,
 	handleFormSubmit: (formData) => {
 		UserInfo.setUserInfo({
-			userName: formData['profile-name'],
-			userAbout: formData['profile-about']
-		})
+			userNameValue: formData['profile-name'],
+			userAboutValue: formData['profile-about']
+		});
 		editProfilePopup.close()
 	}
 })
