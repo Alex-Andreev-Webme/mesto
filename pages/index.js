@@ -70,10 +70,12 @@ addCardBtn.addEventListener('click', () => {
 const editProfilePopup = new PopupWithForm({
 	popupSelector: profilePopup,
 	handleFormSubmit: (formData) => {
-
+		UserInfo.setUserInfo({
+			userName: formData['profile-name'],
+			userAbout: formData['profile-about']
+		})
 		editProfilePopup.close()
 	}
-
 })
 
 const userInfo = new UserInfo({
@@ -83,9 +85,9 @@ const userInfo = new UserInfo({
 
 // Заполняем поля в попапе для редактирования профиля
 const getProfileInfo = () => {
-	const { userName, userAbout } = userInfo.getUserInfo()
-	profilePopupNameInput.value = userName
-	profilePopupAboutInput.value = userAbout
+	const profileInfo = userInfo.getUserInfo()
+	profilePopupNameInput.value = profileInfo.userName
+	profilePopupAboutInput.value = profileInfo.userAbout
 	profileFormValidator.resetValidation()
 	editProfilePopup.open()
 }
