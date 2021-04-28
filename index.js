@@ -13,14 +13,14 @@ import {
 	profilePopupAboutInput,
 	photoPopupForm,
 	profilePopupForm,
-} from '../utils/constants.js'
+} from './utils/constants.js'
 
-import Card from '../components/Card.js'
-import FormValidator from '../components/FormValidator.js'
-import Section from '../components/Section.js'
-import PopupWithImage from '../components/PopupWithImage.js'
-import PopupWithForm from '../components/PopupWithForm.js'
-import UserInfo from '../components/UserInfo.js'
+import Card from './components/Card.js'
+import FormValidator from './components/FormValidator.js'
+import Section from './components/Section.js'
+import PopupWithImage from './components/PopupWithImage.js'
+import PopupWithForm from './components/PopupWithForm.js'
+import UserInfo from './components/UserInfo.js'
 
 // Добавление карточек из массива на страницу
 const cardList = new Section(
