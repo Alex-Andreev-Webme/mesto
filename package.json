@@ -4,7 +4,7 @@
   "description": "В проекте повествуется о туристических маршрутах, озерах и интересных природных локациях. Главная цель сервиса - это функциональная возможность взаимодействия пользователя с контентом на сайте.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Alex-Andreev-Webme/mesto#readme",
   "devDependencies": {
     "webpack": "^5.36.0",
-    "webpack-cli": "^4.6.0"
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
