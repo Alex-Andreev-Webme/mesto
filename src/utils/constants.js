@@ -1,32 +1,39 @@
+import lenskieImage from '../images/card-lenskie-stolby.jpg'
+import ruskealaImage from '../images/card-ruskeala.jpg'
+import ordinskayaImage from '../images/card-ordinskaya-peshera.jpg'
+import krenizynaImage from '../images/card-vulkan-krenizyna.jpg'
+import kezenoyamImage from '../images/card-kezenoyam.jpg'
+import sasykSivashImage from '../images/card-sasyk-sivash.jpg'
+
 const initialCards = [
 	{
 		title: 'Ленские столбы',
-		src: './images/card-lenskie-stolby.jpg',
+		src: lenskieImage,
 		alt: 'Ленские столбы, Якутия'
 	},
 	{
 		title: 'Рускеала',
-		src: './images/card-ruskeala.jpg',
+		src: ruskealaImage,
 		alt: 'Мраморный каньон Рускеала, Карелия'
 	},
 	{
 		title: 'Ординская пещера',
-		src: './images/card-ordinskaya-peshera.jpg',
+		src: ordinskayaImage,
 		alt: 'Ординская пещера, Пермский край'
 	},
 	{
 		title: 'Вулкан Креницына',
-		src: './images/card-vulkan-krenizyna.jpg',
+		src: krenizynaImage,
 		alt: 'Вулкан Креницына, Курильские острова'
 	},
 	{
 		title: 'Кезенойам',
-		src: './images/card-kezenoyam.jpg',
+		src: kezenoyamImage,
 		alt: 'Озеро Кезенойам, Чечня'
 	},
 	{
 		title: 'Сасык-Сиваш',
-		src: './images/card-sasyk-sivash.jpg',
+		src: sasykSivashImage,
 		alt: 'Розовое озеро Сасык - Сиваш, Крым'
 	},
 ]
