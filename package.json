@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Alex-Andreev-Webme/mesto/issues"
   },
-  "homepage": "https://github.com/Alex-Andreev-Webme/mesto#readme"
+  "homepage": "https://github.com/Alex-Andreev-Webme/mesto#readme",
+  "devDependencies": {
+    "webpack": "^5.36.0"
+  }
 }
