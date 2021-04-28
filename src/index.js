@@ -100,5 +100,3 @@ const photoFormValidator = new FormValidator(validationConfig, photoPopupForm)
 photoFormValidator.enableValidation()
 
 cardList.renderItems()
-
-console.log('Тестируем прод сборку')
