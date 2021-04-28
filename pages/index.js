@@ -62,7 +62,7 @@ addCardBtn.addEventListener('click', () => {
 const editProfilePopup = new PopupWithForm({
 	popupSelector: profilePopup,
 	handleFormSubmit: (formData) => {
-		UserInfo.setUserInfo({
+		userInfo.setUserInfo({
 			userNameValue: formData['profile-name'],
 			userAboutValue: formData['profile-about']
 		});
