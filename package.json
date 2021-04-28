@@ -1,0 +1,20 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "В проекте повествуется о туристических маршрутах, озерах и интересных природных локациях. Главная цель сервиса - это функциональная возможность взаимодействия пользователя с контентом на сайте.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex-Andreev-Webme/mesto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alex-Andreev-Webme/mesto/issues"
+  },
+  "homepage": "https://github.com/Alex-Andreev-Webme/mesto#readme"
+}
