@@ -1,5 +1,6 @@
-const path = require('path') // Утилита, которая превращает относительный путь в абсолютный
-
+const path = require('path'); // Утилита, которая превращает относительный путь в абсолютный
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // Плагин для сборки html файлов
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // Плагин для очищения содержимого директории dist
 
 module.exports = {
 	entry: { main: './src/index.js' },
@@ -25,5 +26,13 @@ module.exports = {
 				exclude: '/node_modules/'
 			}
 		]
-	}
+	},
+
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: './src/index.html'
+		}),
+
+		new CleanWebpackPlugin(),
+	]
 };
