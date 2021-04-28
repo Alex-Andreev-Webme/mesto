@@ -1,6 +1,6 @@
-export default class Popup {
-	_ESCAPE = 'Escape'
+const ESCAPE_KEY = 'Escape'
 
+export default class Popup {
 	constructor(popupSelector) {
 		this._popupEl = document.querySelector(popupSelector)
 		this._closePopupBtn = this._popupEl.querySelector('.popup__close-btn')
@@ -22,7 +22,7 @@ export default class Popup {
 	}
 
 	_handleEscClose(event) {
-		if (event.key === this._ESCAPE) {
+		if (event.key === ESCAPE_KEY) {
 			this.close()
 		}
 	}
