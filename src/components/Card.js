@@ -19,8 +19,9 @@ export default class Card {
 	generateCard() {
 		this._element = this._getCard()
 		this._setEventListeners()
-		this._element.querySelector('.card__image').src = this._image
-		this._element.querySelector('.card__image').alt = this._alt
+		const cardImage = this._element.querySelector('.card__image')
+		cardImage.src = this._image
+		cardImage.alt = this._alt
 		this._element.querySelector('.card__title').textContent = this._title
 
 		return this._element
@@ -42,8 +43,7 @@ export default class Card {
 	}
 
 	_removeCard() {
-		this._element.style.transform = 'scale(0)'
-		this._element.style.opacity = '0'
+		this._element.classList.add('card_removed')
 		setTimeout(() => {
 			this._element.remove()
 			this._element = null

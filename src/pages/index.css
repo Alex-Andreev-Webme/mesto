@@ -32,6 +32,7 @@
 @import url("../blocks/profile/__add-btn/profile__add-btn.css");
 @import url("../blocks/cards/cards.css");
 @import url("../blocks/card/card.css");
+@import url("../blocks/card/_removed/card_removed.css");
 @import url("../blocks/card/__remove-btn/card__remove-btn.css");
 @import url("../blocks/card/__image/card__image.css");
 @import url("../blocks/card/__action/card__action.css");

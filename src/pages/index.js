@@ -37,8 +37,8 @@ const cardList = new Section(
 
 const previewImagePopup = new PopupWithImage(previewPopup)
 
-function previewImage(src, title) {
-	previewImagePopup.open(src, title)
+function previewImage(src, title, alt) {
+	previewImagePopup.open(src, title, alt)
 }
 
 const addCardPopup = new PopupWithForm({

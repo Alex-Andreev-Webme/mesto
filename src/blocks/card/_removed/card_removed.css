@@ -1,0 +1,4 @@
+.card_removed {
+	transform: scale(0);
+	opacity: 0;
+}
