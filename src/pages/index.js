@@ -44,7 +44,7 @@ const cardList = new Section(
 		}
 	}, cardsContainer)
 
-const previewImagePopup = new PopupWithImage(previewPopup)
+const previewImagePopup = new PopupWithImage()
 
 // Вставляем новую карточку через попап
 const addCardPopup = new PopupWithForm({
