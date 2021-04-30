@@ -24,37 +24,37 @@ import PopupWithImage from '../components/PopupWithImage.js'
 import PopupWithForm from '../components/PopupWithForm.js'
 import UserInfo from '../components/UserInfo.js'
 
-// [ЗДЕСЬ]
+// Формируем карточку
+const getCard = (data) => {
+	const newCard = new Card(
+		data,
+		'.cards-template',
+		() => previewImagePopup.open(data.src, data.title)
+	)
 
+	return newCard.generateCard()
+}
 
-// Добавление карточек из массива на страницу [ЗДЕСЬ ПОВТОРЯЕТСЯ]
+// Добавление карточек из массива на страницу
 const cardList = new Section(
 	{
 		data: initialCards,
-		renderer: item => {
-			const newCard = new Card(item, '.cards-template', previewImage)
-			const cardEl = newCard.generateCard()
-			cardList.addItem(cardEl)
+		renderer: (data) => {
+			cardList.addItem(getCard(data))
 		}
 	}, cardsContainer)
 
 const previewImagePopup = new PopupWithImage(previewPopup)
 
-function previewImage(src, title, alt) {
-	previewImagePopup.open(src, title, alt)
-}
-
-// Вставляем новую карточку через попап [ЗДЕСЬ ПОВТОРЯЕТСЯ]
+// Вставляем новую карточку через попап
 const addCardPopup = new PopupWithForm({
 	popupSelector: photoPopup,
 	handleFormSubmit: (formData) => {
-		const newCard = new Card({
+		cardList.addItem(getCard({
 			title: formData['photo-name'],
 			src: formData['photo-link']
-		}, '.cards-template', previewImage)
+		}))
 
-		const cardEl = newCard.generateCard()
-		cardList.addItem(cardEl)
 		addCardPopup.close()
 	}
 })
