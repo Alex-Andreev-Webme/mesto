@@ -24,7 +24,7 @@ import PopupWithImage from '../components/PopupWithImage.js'
 import PopupWithForm from '../components/PopupWithForm.js'
 import UserInfo from '../components/UserInfo.js'
 
-// Вставляем карточку на страницу
+// [ЗДЕСЬ]
 
 
 // Добавление карточек из массива на страницу [ЗДЕСЬ ПОВТОРЯЕТСЯ]
