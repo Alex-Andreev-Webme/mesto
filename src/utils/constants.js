@@ -3,7 +3,9 @@ import ruskealaImage from '../images/card-ruskeala.jpg'
 import ordinskayaImage from '../images/card-ordinskaya-peshera.jpg'
 import krenizynaImage from '../images/card-vulkan-krenizyna.jpg'
 import kezenoyamImage from '../images/card-kezenoyam.jpg'
+import veneciaImage from '../images/card-venecia.jpg'
 import sasykSivashImage from '../images/card-sasyk-sivash.jpg'
+import pragueImage from '../images/card-prague.jpg'
 
 const initialCards = [
 	{
@@ -32,10 +34,20 @@ const initialCards = [
 		alt: 'Озеро Кезенойам, Чечня'
 	},
 	{
+		title: 'Венеция',
+		src: veneciaImage,
+		alt: 'Венеция, Италия'
+	},
+	{
 		title: 'Сасык-Сиваш',
 		src: sasykSivashImage,
 		alt: 'Розовое озеро Сасык - Сиваш, Крым'
 	},
+	{
+		title: 'Прага',
+		src: pragueImage,
+		alt: 'Прага, Чехия'
+	}
 ]
 
 const validationConfig = {
