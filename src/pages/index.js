@@ -24,7 +24,10 @@ import PopupWithImage from '../components/PopupWithImage.js'
 import PopupWithForm from '../components/PopupWithForm.js'
 import UserInfo from '../components/UserInfo.js'
 
-// Добавление карточек из массива на страницу
+// Вставляем карточку на страницу
+
+
+// Добавление карточек из массива на страницу [ЗДЕСЬ ПОВТОРЯЕТСЯ]
 const cardList = new Section(
 	{
 		data: initialCards,
@@ -41,6 +44,7 @@ function previewImage(src, title, alt) {
 	previewImagePopup.open(src, title, alt)
 }
 
+// Вставляем новую карточку через попап [ЗДЕСЬ ПОВТОРЯЕТСЯ]
 const addCardPopup = new PopupWithForm({
 	popupSelector: photoPopup,
 	handleFormSubmit: (formData) => {
