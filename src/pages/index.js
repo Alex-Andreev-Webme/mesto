@@ -106,3 +106,14 @@ const photoFormValidator = new FormValidator(validationConfig, photoPopupForm)
 photoFormValidator.enableValidation()
 
 cardList.renderItems()
+
+// Проверяем, отвечает ли сервер на GET запрос
+fetch('https://nomoreparties.co/v1/cohort-22/users/me', {
+	headers: {
+		authorization: '00f8d6a6-e259-4a54-8edc-d0e8df29b27e'
+	}
+})
+	.then((res) => res.json())
+	.then((data) => {
+		console.log(data)
+	})
