@@ -115,5 +115,6 @@ fetch('https://nomoreparties.co/v1/cohort-22/users/me', {
 })
 	.then((res) => res.json())
 	.then((data) => {
-		console.log(data)
+		console.log(data.name)
+		console.log(data.about)
 	})
