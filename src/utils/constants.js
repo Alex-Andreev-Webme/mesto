@@ -1,55 +1,3 @@
-import lenskieImage from '../images/card-lenskie-stolby.jpg'
-import ruskealaImage from '../images/card-ruskeala.jpg'
-import ordinskayaImage from '../images/card-ordinskaya-peshera.jpg'
-import krenizynaImage from '../images/card-vulkan-krenizyna.jpg'
-import kezenoyamImage from '../images/card-kezenoyam.jpg'
-import veneciaImage from '../images/card-venecia.jpg'
-import sasykSivashImage from '../images/card-sasyk-sivash.jpg'
-import pragueImage from '../images/card-prague.jpg'
-
-const initialCards = [
-	{
-		title: 'Ленские столбы',
-		src: lenskieImage,
-		alt: 'Ленские столбы, Якутия'
-	},
-	{
-		title: 'Рускеала',
-		src: ruskealaImage,
-		alt: 'Мраморный каньон Рускеала, Карелия'
-	},
-	{
-		title: 'Ординская пещера',
-		src: ordinskayaImage,
-		alt: 'Ординская пещера, Пермский край'
-	},
-	{
-		title: 'Вулкан Креницына',
-		src: krenizynaImage,
-		alt: 'Вулкан Креницына, Курильские острова'
-	},
-	{
-		title: 'Кезенойам',
-		src: kezenoyamImage,
-		alt: 'Озеро Кезенойам, Чечня'
-	},
-	{
-		title: 'Венеция',
-		src: veneciaImage,
-		alt: 'Венеция, Италия'
-	},
-	{
-		title: 'Сасык-Сиваш',
-		src: sasykSivashImage,
-		alt: 'Розовое озеро Сасык - Сиваш, Крым'
-	},
-	{
-		title: 'Прага',
-		src: pragueImage,
-		alt: 'Прага, Чехия'
-	}
-]
-
 const validationConfig = {
 	formSelector: '.popup__form',
 	inputSelector: '.popup__input',
@@ -74,7 +22,6 @@ const ESCAPE_KEY = 'Escape'
 
 export {
 	cardsContainer,
-	initialCards,
 	validationConfig,
 	previewPopup,
 	photoPopup,

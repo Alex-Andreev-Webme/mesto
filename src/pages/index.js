@@ -2,7 +2,6 @@ import './index.css'
 
 import {
 	cardsContainer,
-	initialCards,
 	validationConfig,
 	previewPopup,
 	photoPopup,
@@ -23,26 +22,18 @@ import Section from '../components/Section.js'
 import PopupWithImage from '../components/PopupWithImage.js'
 import PopupWithForm from '../components/PopupWithForm.js'
 import UserInfo from '../components/UserInfo.js'
+import Api from '../components/Api.js'
 
 // Формируем карточку
 const getCard = (data) => {
 	const newCard = new Card(
 		data,
 		'.cards-template',
-		() => previewImagePopup.open(data.src, data.title)
+		() => previewImagePopup.open(data.link, data.name)
 	)
 
 	return newCard.generateCard()
 }
-
-// Добавление карточек из массива на страницу
-const cardList = new Section(
-	{
-		data: initialCards,
-		renderer: (data) => {
-			cardList.addItem(getCard(data))
-		}
-	}, cardsContainer)
 
 const previewImagePopup = new PopupWithImage(previewPopup)
 
@@ -105,16 +96,31 @@ profileFormValidator.enableValidation()
 const photoFormValidator = new FormValidator(validationConfig, photoPopupForm)
 photoFormValidator.enableValidation()
 
-cardList.renderItems()
-
-// Проверяем, отвечает ли сервер на GET запрос
-fetch('https://nomoreparties.co/v1/cohort-22/users/me', {
+// НАЧИНАТЬ РАЗБИРАТЬСЯ ОТСЮДА
+const api = new Api({
+	baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-22',
 	headers: {
-		authorization: '00f8d6a6-e259-4a54-8edc-d0e8df29b27e'
+		authorization: '00f8d6a6-e259-4a54-8edc-d0e8df29b27e',
+		'Content-Type': 'application/json'
 	}
 })
-	.then((res) => res.json())
-	.then((data) => {
-		console.log(data.name)
-		console.log(data.about)
+
+function renderCards(cards) {
+	const cardList = new Section(
+		{
+			data: cards,
+			renderer: (data) => {
+				cardList.addItem(getCard(data))
+			}
+		}, cardsContainer)
+
+	cardList.renderItems()
+}
+
+api.getInitialCards()
+	.then((cards) => {
+		renderCards(cards)
+	})
+	.catch((err) => {
+		console.error('Ошибка загрузки карточки', err)
 	})
